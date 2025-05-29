@@ -1,0 +1,189 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    overflow: hidden;
+    background: white;
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    bottom: -1500px;
+    right: -1500px;
+    width: 2009.199px;
+    height: 2009.199px;
+    border-radius: 2009.199px;
+    background: linear-gradient(90deg, #FCFCFC 2.27%, #E98993 23.01%, #6B8BDE 48.68%, #90E1F9 77.31%, #FCFCFC 98.65%);
+    filter: blur(75px);
+    z-index: -1;
+}
+
+.header {
+    position: relative;
+    height: 2rem;
+}
+
+.logo {
+    height: 2rem;
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+}
+
+.container {
+    height: calc(100vh - 2rem);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modules-container {
+    max-width: 1200px;
+    width: 100%;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    box-sizing: border-box;
+}
+
+.module-card {
+    min-height: 30vh;
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.module-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.module-number {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #0066cc;
+}
+
+.module-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0 0 10px 0;
+    color: #333;
+}
+
+.module-description {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.4;
+    margin: 0;
+}
+
+.card-content {
+    padding-right: 30px;
+}
+
+/* Estilos para las páginas de contenido de módulos */
+.module-content {
+    background: #ffffff;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.module-content h1 {
+    color: #333;
+    font-size: 28px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #0066cc;
+    padding-bottom: 10px;
+}
+
+.content-section {
+    margin: 20px 0;
+}
+
+.content-section h2 {
+    color: #0066cc;
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+.btn-back {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #0066cc;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+.btn-back:hover {
+    background-color: #0052a3;
+}
+
+.btn-secondary {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #0066cc;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background-color: #0052a3;
+}
+
+@media (max-width: 768px) {
+    .modules-container {
+        grid-template-columns: 1fr;
+        padding: 15px;
+    }
+
+    .logo {
+        width: 140px;
+    }
+
+    .module-title {
+        font-size: 18px;
+    }
+
+    .module-description {
+        font-size: 14px;
+    }
+
+    .module-content {
+        width: 95%;
+        padding: 20px;
+    }
+
+    .module-content h1 {
+        font-size: 24px;
+    }
+
+    .content-section h2 {
+        font-size: 20px;
+    }
+} 
