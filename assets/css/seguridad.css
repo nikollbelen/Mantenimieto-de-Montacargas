@@ -1,0 +1,159 @@
+@import url('variables.css');
+
+/* Estilos generales */
+body {
+    font-family: 'AA Smart Sans', sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: var(--background-gradient);
+    color: var(--text-secondary);
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: var(--text-secondary);
+    margin-bottom: 30px;
+}
+
+.intro-text {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+}
+
+/* Contenedor de tarjetas con scroll horizontal */
+.cards-container {
+    width: 100%;
+    overflow-x: auto;
+    padding: 20px 0;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Grid de tarjetas */
+.cards-grid {
+    display: flex;
+    gap: 20px;
+    padding: 10px;
+    min-width: max-content;
+}
+
+/* Estilos para las tarjetas volteables */
+.flip-card {
+    flex: 0 0 300px;
+    height: 40vh;
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+}
+
+.flip-card-front {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.flip-card-back {
+    background-color: var(--secondary-color);
+    color: #fff;
+    transform: rotateY(180deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.flip-card-front h3 {
+    margin: 0 0 20px 0;
+    font-size: 1.2em;
+    color: var(--text-secondary);
+    text-align: center;
+}
+
+.flip-card-front img {
+    max-width: 80%;
+    max-height: 200px;
+    object-fit: contain;
+}
+
+.flip-card-back p {
+    margin: 0;
+    font-size: 1em;
+    line-height: 1.6;
+    text-align: left;
+}
+
+/* Personalización de la barra de desplazamiento */
+.cards-container::-webkit-scrollbar {
+    height: 8px;
+}
+
+.cards-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.cards-container::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+.cards-container::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .flip-card {
+        flex: 0 0 250px;
+        height: 350px;
+    }
+
+    .flip-card-front h3 {
+        font-size: 1em;
+    }
+
+    .flip-card-back p {
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 480px) {
+    .flip-card {
+        flex: 0 0 200px;
+        height: 300px;
+    }
+} 

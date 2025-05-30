@@ -1,0 +1,297 @@
+@import url('variables.css');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'AA Smart Sans', sans-serif;
+    background: linear-gradient(135deg, var(--background-gradient-1), var(--background-gradient-2));
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: var(--spacing-lg);
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xl);
+}
+
+/* Estilos para las cards de módulos */
+.modules-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+    width: 100%;
+}
+
+.module-card {
+    background: VAR(--background-gradient-2);
+    border-radius: var(--border-radius-lg);
+    padding: var(--spacing-lg);
+    position: relative;
+    overflow: hidden;
+    min-height: 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.module-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: var(--border-radius-lg);
+    padding: 2px;
+    background: linear-gradient(45deg, #ff6b6b, #a741ff);
+    -webkit-mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+}
+
+.module-card > div:first-child {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+}
+
+.module-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: var(--background-gradient-1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: var(--spacing-md);
+}
+
+.module-icon svg {
+    width: 32px;
+    height: 32px;
+    fill: white;
+}
+
+.module-number {
+    font-size: 1.2rem;
+    color: #888;
+    margin-bottom: var(--spacing-sm);
+    align-self: flex-start;
+    width: 100%;
+}
+
+.module-title {
+    font-size: 1.5rem;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-md);
+    font-weight: bold;
+    align-self: flex-start;
+    width: 100%;
+}
+
+.module-description {
+    color: VAR(--text-secondary);
+    line-height: 1.6;
+    font-size: 2.5vh;
+    align-self: flex-start;
+    width: 100%;
+    text-align: center;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+    margin-top: var(--spacing-md);
+    overflow: hidden;
+}
+
+.progress-bar::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: var(--background-gradient-1);
+    transform-origin: left;
+    animation: progress 2s ease-out forwards;
+}
+
+@keyframes progress {
+    from { transform: scaleX(0); }
+    to { transform: scaleX(1); }
+}
+
+.audio-player-container {
+    background: var(--glass-background);
+    backdrop-filter: var(--glass-blur);
+    border: var(--glass-border);
+    border-radius: var(--border-radius-lg);
+    padding: var(--spacing-lg);
+    box-shadow: var(--shadow);
+}
+
+.player-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-md);
+}
+
+.player-header h2 {
+    color: var(--text-primary);
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+#time-display {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    font-family: monospace;
+}
+
+.waveform-container {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: var(--border-radius-md);
+    padding: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+    height: 128px;
+}
+
+#waveform {
+    width: 100%;
+    height: 100%;
+}
+
+.controls-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+}
+
+.control-btn {
+    background: transparent;
+    border: var(--glass-border);
+    color: var(--text-primary);
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.control-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: scale(1.1);
+}
+
+.control-btn i {
+    font-size: 1.2rem;
+}
+
+.volume-control {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    margin-left: var(--spacing-md);
+}
+
+.volume-control i {
+    color: var(--text-primary);
+}
+
+#volume {
+    width: 100px;
+    height: 4px;
+    -webkit-appearance: none;
+    background: var(--text-disabled);
+    border-radius: 2px;
+    outline: none;
+}
+
+#volume::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 12px;
+    height: 12px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.transcript-container {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: var(--border-radius-md);
+    padding: var(--spacing-md);
+}
+
+.transcript-container h3 {
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-sm);
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.transcript-text {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    font-size: 0.95rem;
+    max-height: 200px;
+    overflow-y: auto;
+    padding-right: var(--spacing-sm);
+}
+
+.transcript-text::-webkit-scrollbar {
+    width: 4px;
+}
+
+.transcript-text::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.transcript-text::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 2px;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: var(--spacing-sm);
+    }
+
+    .audio-player-container {
+        padding: var(--spacing-md);
+    }
+
+    .player-header h2 {
+        font-size: 1.2rem;
+    }
+
+    .waveform-container {
+        height: 96px;
+    }
+
+    .control-btn {
+        width: 40px;
+        height: 40px;
+    }
+
+    .volume-control {
+        display: none;
+    }
+} 

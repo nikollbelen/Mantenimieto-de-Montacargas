@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Línea de Tiempo - Actuadores Neumáticos</title>
+    <link rel="stylesheet" href="../assets/css/timeline.css">
+</head>
+<body>
+    <div class="container">
+        <div class="timeline-container">
+            <div class="content-section">
+                <div class="visual-card">
+                    <div class="image-container">
+                        <!-- La imagen se cambiará dinámicamente con JavaScript -->
+                        <img src="../assets/images/actuador-1950.png" alt="Actuador neumático histórico" id="period-image">
+                    </div>
+                </div>
+                <div class="event-info">
+                    <div class="info-card">
+                        <h2>Evolución de los Actuadores Neumáticos</h2>
+                        <p>Selecciona un punto en la línea de tiempo para ver la información detallada.</p>
+                        <div class="audio-section">
+                            <audio id="period-audio" controls>
+                                <source src="../assets/audio/actuador-1950.mp3" type="audio/mpeg">
+                                Tu navegador no soporta el elemento de audio.
+                            </audio>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="timeline">
+                <div class="timeline-line"></div>
+                <div class="timeline-progress"></div>
+                <div class="timeline-events">
+                    <!-- Los eventos se generarán dinámicamente con JavaScript -->
+                </div>
+            </div>
+
+            <div class="timeline-controls">
+                <button class="control-btn prev-btn">&#10094; Anterior</button>
+                <button class="control-btn play-btn">Reproducir</button>
+                <button class="control-btn next-btn">Siguiente &#10095;</button>
+            </div>
+        </div>
+    </div>
+    <script src="../js/timeline.js"></script>
+</body>
+</html> 

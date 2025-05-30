@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reproductor de Audio - Actuadores Neumáticos</title>
+    <link rel="stylesheet" href="../assets/css/fonts.css">
+    <link rel="stylesheet" href="../assets/libs/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/audio-player.css">
+    <script src="../assets/libs/wavesurfer/wavesurfer.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="audio-player-container">
+            <div class="player-header">
+                <h2 id="audio-title">Seguridad en tareas de mantenimiento</h2>
+                <span id="time-display">00:00 / 00:00</span>
+            </div>
+
+            <div class="waveform-container">
+                <div id="waveform"></div>
+            </div>
+
+            <div class="controls-container">
+                <button id="prev-btn" class="control-btn">
+                    <i class="fas fa-step-backward"></i>
+                </button>
+                <button id="play-btn" class="control-btn">
+                    <i class="fas fa-play"></i>
+                </button>
+                <button id="next-btn" class="control-btn">
+                    <i class="fas fa-step-forward"></i>
+                </button>
+                <div class="volume-control">
+                    <i class="fas fa-volume-up"></i>
+                    <input type="range" id="volume" min="0" max="100" value="100">
+                </div>
+            </div>
+
+            <div class="transcript-container">
+                <h3>Objetivo</h3>
+                <div id="transcript" class="transcript-text">
+                    Aplicar procedimientos de seguridad industrial y prácticas preventivas para minimizar los riesgos durante las tareas de mantenimiento del montacargas, de acuerdo con los lineamientos de Anglo American Quellaveco y normativas vigentes
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../js/audio-player.js"></script>
+</body>
+</html> 
