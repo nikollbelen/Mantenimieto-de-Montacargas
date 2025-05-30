@@ -1,19 +1,75 @@
 /* Font settings */
 @font-face {
     font-family: 'AA Smart Sans';
-    src: url('../fonts/AASmartSans-Regular.woff2') format('woff2'),
-         url('../fonts/AASmartSans-Regular.woff') format('woff');
+    src: url('../fonts/AASMARTSANS-THIN.TTF') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'AA Smart Sans';
+    src: url('../fonts/AASMARTSANS-LIGHT.TTF') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'AA Smart Sans';
+    src: url('../fonts/AASMARTSANS-REGULAR.TTF') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'AA Smart Sans';
-    src: url('../fonts/AASmartSans-Bold.woff2') format('woff2'),
-         url('../fonts/AASmartSans-Bold.woff') format('woff');
+    src: url('../fonts/AASMARTSANS-SEMIBOLD.TTF') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'AA Smart Sans';
+    src: url('../fonts/AASMARTSANS-BOLD.TTF') format('truetype');
     font-weight: bold;
     font-style: normal;
 }
+
+/* Italic variants */
+@font-face {
+    font-family: 'AA Smart Sans';
+    src: url('../fonts/AASMARTSANS-THINITALIC.TTF') format('truetype');
+    font-weight: 100;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'AA Smart Sans';
+    src: url('../fonts/AASMARTSANS-LIGHTITALIC.TTF') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'AA Smart Sans';
+    src: url('../fonts/AASMARTSANS-REGULARITALIC.TTF') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'AA Smart Sans';
+    src: url('../fonts/AASMARTSANS-SEMIBOLDITALIC.TTF') format('truetype');
+    font-weight: 600;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'AA Smart Sans';
+    src: url('../fonts/AASMARTSANS-BOLDITALIC.TTF') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+}
+
 :root {
     /* Variables de color */
     --primary-color: #49488A;
@@ -70,4 +126,7 @@
     --transition-fast: 0.2s ease;
     --transition-normal: 0.3s ease;
     --transition-slow: 0.5s ease;
+
+    /* Fuente principal */
+    --font-family: 'AA Smart Sans', Arial, sans-serif;
 } 
