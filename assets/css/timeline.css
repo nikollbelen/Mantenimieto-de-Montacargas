@@ -16,9 +16,22 @@ body {
     padding: var(--spacing-lg);
 }
 
+/* Título de la página */
+.page-title {
+    position: absolute;
+    top: var(--spacing-md);
+    left: var(--spacing-md);
+    color: var(--text-primary);
+    font-size: 1.8rem;
+    margin: 0;
+    z-index: 10;
+    text-shadow: var(--shadow);
+}
+
 .container {
     width: 100%;
     max-width: 1400px;
+    padding-top: 60px; /* Espacio para el título */
 }
 
 .timeline-container {
@@ -62,13 +75,25 @@ body {
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    padding: var(--spacing-md);
 }
 
 .image-container img {
-    max-width: 100%;
-    max-height: 100%;
+    max-width: 80%;
+    max-height: 300px;
     object-fit: contain;
-    transition: transform var(--transition-normal);
+    transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow);
+    background: var(--glass-background);
+    backdrop-filter: var(--glass-blur);
+    padding: var(--spacing-sm);
+    border: var(--glass-border);
+}
+
+.image-container img:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px var(--shadow-color-strong);
 }
 
 .timeline {
@@ -235,37 +260,37 @@ body {
     color: var(--text-primary);
 }
 
+/* Ajustes responsive */
+@media (max-width: 1024px) {
+    .image-container img {
+        max-height: 250px;
+    }
+}
+
 @media (max-width: 768px) {
-    .timeline-container {
+    .page-title {
+        font-size: 1.4rem;
+        top: var(--spacing-sm);
+        left: var(--spacing-sm);
+    }
+
+    .container {
+        padding-top: 50px;
+    }
+
+    .content-section {
+        grid-template-columns: 1fr;
         gap: var(--spacing-md);
     }
 
-    .event-visual {
-        height: 40vh;
-    }
-
-    .timeline {
-        height: 80px;
-    }
-
-    .timeline-event::after {
-        font-size: 0.8rem;
-    }
-
-    .info-card {
-        padding: var(--spacing-sm);
-    }
-
-    .info-card h2 {
-        font-size: 1.2rem;
-    }
-
-    .info-card p {
-        font-size: 0.9rem;
+    .image-container img {
+        max-height: 200px;
     }
 
     .timeline-controls {
         flex-wrap: wrap;
+        justify-content: center;
+        gap: var(--spacing-sm);
     }
 
     .control-btn {
@@ -273,8 +298,26 @@ body {
         padding: var(--spacing-xs) var(--spacing-sm);
     }
 
-    .content-section {
-        grid-template-columns: 1fr;
-        gap: var(--spacing-md);
+    .timeline {
+        height: 80px;
+    }
+}
+
+@media (max-width: 480px) {
+    .page-title {
+        font-size: 1.2rem;
+    }
+
+    .image-container img {
+        max-height: 180px;
+        max-width: 90%;
+    }
+
+    .info-card h2 {
+        font-size: 1.3rem;
+    }
+
+    .info-card p {
+        font-size: 0.9rem;
     }
 } 
