@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Equipo de Protección Personal (EPP)</title>
+    <link rel="stylesheet" href="../assets/css/fonts.css">
+    <link rel="stylesheet" href="../assets/libs/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/condiciones.css">
+    <!-- Import model-viewer component -->
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.3.0/model-viewer.min.js"></script>
+    <style>
+        .model-card {
+            background: var(--glass-background);
+            border-radius: var(--border-radius-md);
+            padding: var(--spacing-md);
+            box-shadow: var(--shadow);
+            backdrop-filter: var(--glass-blur);
+            border: var(--glass-border);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 400px;
+        }
+
+        .model-card model-viewer {
+            width: 100%;
+            height: 300px;
+            background-color: transparent;
+            --poster-color: transparent;
+        }
+
+        .model-title {
+            color: var(--primary-color);
+            margin-top: var(--spacing-sm);
+            font-size: 1.2rem;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--spacing-lg);
+            margin-top: var(--spacing-lg);
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 4px;
+            background: #ddd;
+            position: relative;
+        }
+
+        .update-bar {
+            background: var(--primary-color);
+            height: 100%;
+            position: absolute;
+            transition: width 0.3s;
+        }
+
+        .hide {
+            display: none;
+        }
+
+        @media (max-width: 1024px) {
+            .cards-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .cards-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .model-card {
+                height: 350px;
+            }
+            
+            .model-card model-viewer {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="audio-player-container">
+            <div class="player-header">
+                <h2 id="audio-title">Equipo de Protección Personal (EPP)</h2>
+            </div>
+
+            <div class="transcript-container">
+                <div id="transcript" class="transcript-text">
+                    A continuación, te presentamos los elementos que conforman el Equipo de Protección Personal, indispensables para trabajar de manera segura.
+                </div>
+            </div>
+
+            <div class="cards-grid">
+                <!-- Casco -->
+                <div class="model-card">
+                    <model-viewer 
+                        id="model-viewer" 
+                        camera-controls 
+                        touch-action="pan-y" 
+                        touch-action="pan-x" 
+                        interaction-policy="allow-when-focused" 
+                        shadow-intensity="1" 
+                        environment-image="neutral" 
+                        exposure="1" 
+                        shadow-softness="1" 
+                        camera-orbit="0deg 75deg 105%" 
+                        src="../assets/models/EPP/Casco.glb" 
+                        alt="3D model" 
+                        loading="eager" 
+                        interaction-prompt="none">
+                        <div class="progress-bar hide" slot="progress-bar">
+                            <div class="update-bar"></div>
+                        </div>
+                    </model-viewer>
+                    <h3 class="model-title">Casco de Seguridad</h3>
+                </div>
+
+                <!-- Lentes -->
+                <div class="model-card">
+                    <model-viewer 
+                        id="model-viewer" 
+                        camera-controls 
+                        touch-action="pan-y" 
+                        touch-action="pan-x" 
+                        interaction-policy="allow-when-focused" 
+                        shadow-intensity="1" 
+                        environment-image="neutral" 
+                        exposure="1" 
+                        shadow-softness="1" 
+                        camera-orbit="0deg 75deg 105%" 
+                        src="../assets/models/EPP/Glass.glb" 
+                        alt="3D model" 
+                        loading="eager" 
+                        interaction-prompt="none">
+                        <div class="progress-bar hide" slot="progress-bar">
+                            <div class="update-bar"></div>
+                        </div>
+                    </model-viewer>
+                    <h3 class="model-title">Lentes de Seguridad</h3>
+                </div>
+
+                <!-- Zapatos -->
+                <div class="model-card">
+                    <model-viewer 
+                        id="model-viewer" 
+                        camera-controls 
+                        touch-action="pan-y" 
+                        touch-action="pan-x" 
+                        interaction-policy="allow-when-focused" 
+                        shadow-intensity="1" 
+                        environment-image="neutral" 
+                        exposure="1" 
+                        shadow-softness="1" 
+                        camera-orbit="0deg 75deg 105%" 
+                        src="../assets/models/EPP/ZapatoSeguridad.glb" 
+                        alt="3D model" 
+                        loading="eager" 
+                        interaction-prompt="none">
+                        <div class="progress-bar hide" slot="progress-bar">
+                            <div class="update-bar"></div>
+                        </div>
+                    </model-viewer>
+                    <h3 class="model-title">Zapatos de Seguridad</h3>
+                </div>
+
+                <!-- Polo -->
+                <div class="model-card">
+                    <model-viewer 
+                        id="model-viewer" 
+                        camera-controls 
+                        touch-action="pan-y" 
+                        touch-action="pan-x" 
+                        interaction-policy="allow-when-focused" 
+                        shadow-intensity="1" 
+                        environment-image="neutral" 
+                        exposure="1" 
+                        shadow-softness="1" 
+                        camera-orbit="0deg 75deg 105%" 
+                        src="../assets/models/EPP/Polo.glb" 
+                        alt="3D model" 
+                        loading="eager" 
+                        interaction-prompt="none">
+                        <div class="progress-bar hide" slot="progress-bar">
+                            <div class="update-bar"></div>
+                        </div>
+                    </model-viewer>
+                    <h3 class="model-title">Polo de Seguridad</h3>
+                </div>
+
+                <!-- Bloqueador -->
+                <div class="model-card">
+                    <model-viewer 
+                        id="model-viewer" 
+                        camera-controls 
+                        touch-action="pan-y" 
+                        touch-action="pan-x" 
+                        interaction-policy="allow-when-focused" 
+                        shadow-intensity="1" 
+                        environment-image="neutral" 
+                        exposure="1" 
+                        shadow-softness="1" 
+                        camera-orbit="0deg 75deg 105%" 
+                        src="../assets/models/EPP/bloq.glb" 
+                        alt="3D model" 
+                        loading="eager" 
+                        interaction-prompt="none">
+                        <div class="progress-bar hide" slot="progress-bar">
+                            <div class="update-bar"></div>
+                        </div>
+                    </model-viewer>
+                    <h3 class="model-title">Bloqueador Solar</h3>
+                </div>
+
+                <!-- Audífonos -->
+                <div class="model-card">
+                    <model-viewer 
+                        id="model-viewer" 
+                        camera-controls 
+                        touch-action="pan-y" 
+                        touch-action="pan-x" 
+                        interaction-policy="allow-when-focused" 
+                        shadow-intensity="1" 
+                        environment-image="neutral" 
+                        exposure="1" 
+                        shadow-softness="1" 
+                        camera-orbit="0deg 75deg 105%" 
+                        src="../assets/models/EPP/Audi.glb" 
+                        alt="3D model" 
+                        loading="eager" 
+                        interaction-prompt="none">
+                        <div class="progress-bar hide" slot="progress-bar">
+                            <div class="update-bar"></div>
+                        </div>
+                    </model-viewer>
+                    <h3 class="model-title">Protección Auditiva</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../js/audio-handler.js"></script>
+</body>
+</html> 

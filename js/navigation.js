@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const btnSeguridad = document.getElementById('btnSeguridad');
     const btnControlRiesgos = document.getElementById('btnControlRiesgos');
     const btnCondiciones = document.getElementById('btnCondiciones');
+    const btnPagina17 = document.getElementById('btnPagina17');
     
     if (btnModulos) {
         btnModulos.addEventListener('click', function() {
@@ -40,6 +41,12 @@ document.addEventListener('DOMContentLoaded', function() {
     if (btnCondiciones) {
         btnCondiciones.addEventListener('click', function() {
             window.location.href = 'views/condiciones.html';
+        });
+    }
+
+    if (btnPagina17) {
+        btnPagina17.addEventListener('click', function() {
+            window.location.href = 'views/pagina17.html';
         });
     }
 }); 
