@@ -2,63 +2,63 @@ document.addEventListener('DOMContentLoaded', function() {
     const timelineEvents = [
         {
             id: 1,
-            title: "Seleccionar la tarea a analizar (con alta frecuencia de accidentes, con accidentes graves, tareas nuevas).",
+            title: "Seleccionar la tarea a analizar",
             description: "Retirar la barra a esmerilar de la caja alimentadora.",
             image: "../assets/images/ATS/step_1_1.png",
             audio: "../assets/audio/ats/paso1.mp3"
         },
         {
             id: 2,
-            title: "Seleccionar la tarea a analizar (con alta frecuencia de accidentes, con accidentes graves, tareas nuevas).",
+            title: "Seleccionar la tarea a analizar",
             description: "Introducir la barra contra el esmeril para eliminar las rebabas.",
             image: "../assets/images/ATS/step_1_2.png",
             audio: "../assets/audio/ats/paso2.mp3"
         },
         {
             id: 3,
-            title: "Seleccionar la tarea a analizar (con alta frecuencia de accidentes, con accidentes graves, tareas nuevas).",
+            title: "Seleccionar la tarea a analizar",
             description: "Depositar la barra esmerilada en la caja de barras esmeriladas.",
             image: "../assets/images/ATS/step_1_3.png",
             audio: "../assets/audio/ats/paso3.mp3"
         },
         {
             id: 4,
-            title: "Identificar los posibles exposiciones a pérdidas (daños posibles a personas propiedad y proceso) producto de los peligros existentes.",
+            title: "Identificar los posibles exposiciones a pérdidas producto de los peligros existentes",
             description: "Utilizar equipo de protección adecuado para las manos, ojos y pies.",
             image: "../assets/images/ATS/step_2_1.png",
             audio: "../assets/audio/ats/paso4.mp3"
         },
         {
             id: 5,
-            title: "Identificar los posibles exposiciones a pérdidas (daños posibles a personas propiedad y proceso) producto de los peligros existentes.",
+            title: "Identificar los posibles exposiciones a pérdidas producto de los peligros existentes",
             description: "Se utilizará camisa de mangas cortas. Instalar extracción localizada para polvo y guarda sobre el esmeril.",
             image: "../assets/images/ATS/step_2_2.png",
             audio: "../assets/audio/ats/paso5.mp3"
         },
         {
             id: 6,
-            title: "Identificar los posibles exposiciones a pérdidas (daños posibles a personas propiedad y proceso) producto de los peligros existentes.",
+            title: "Identificar los posibles exposiciones a pérdidas producto de los peligros existentes",
             description: "Retirar barras sin rebabas de cajas para evitar acumulación.",
             image: "../assets/images/ATS/step_2_3.png",
             audio: "../assets/audio/ats/paso5.mp3"
         },
         {
             id: 7,
-            title: "Desarrollar una evaluación de eficiencia (respóndase para cada paso preguntas como: ¿Quién?, ¿Donde?, ¿Cuándo?, ¿Cuál?, ¿Por qué? y ¿Cómo? se puede realizar mejor dicho paso)",
+            title: "Desarrollar una evaluación de eficiencia",
             description: "Laceraciones en las manos por bordes filosos de caja de metal o de barras de hierro. Contusión en los pies por dejar caer la barra sobre ellos.",
             image: "../assets/images/ATS/step_3_1.png",
             audio: "../assets/audio/ats/paso5.mp3"
         },
         {
             id: 8,
-            title: "Desarrollar una evaluación de eficiencia (respóndase para cada paso preguntas como: ¿Quién?, ¿Donde?, ¿Cuándo?, ¿Cuál?, ¿Por qué? y ¿Cómo? se puede realizar mejor dicho paso)",
+            title: "Desarrollar una evaluación de eficiencia",
             description: "Irritación de ojos debido a chispas. Quemaduras por contacto con el esmeril. Rotura del pantalón debido a partes móviles del esmeril. Atrapamiento por no usar guarda.",
             image: "../assets/images/ATS/step_3_2.png",
             audio: "../assets/audio/ats/paso5.mp3"
         },
         {
             id: 9,
-            title: "Desarrollar una evaluación de eficiencia (respóndase para cada paso preguntas como: ¿Quién?, ¿Donde?, ¿Cuándo?, ¿Cuál?, ¿Por qué? y ¿Cómo? se puede realizar mejor dicho paso)",
+            title: "Desarrollar una evaluación de eficiencia",
             description: "Laceraciones de manos por bordes filosos de caja de metal o de barras de hierro. Contusión en los pies por dejar caer la barra sobre ellos.",
             image: "../assets/images/ATS/step_3_3.png",
             audio: "../assets/audio/ats/paso5.mp3"
