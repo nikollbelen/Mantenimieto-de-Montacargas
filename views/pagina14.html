@@ -23,29 +23,83 @@
       background: #FFFFFF;
       font-family: 'Arial', sans-serif;
       position: relative;
-      display: flex;
-      justify-content: space-between;
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      padding: 0;
+      min-height: 100vh;
       align-items: center;
+      overflow-x: hidden;
+    }
+
+    .heat-bar-container {
+      position: relative;
+      grid-column: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 90vh;
+      margin: auto;
+    }
+
+    .heat-bar {
+      width: 30px;
+      height: 80vh;
+      background: linear-gradient(
+        to bottom,
+        #3498db 0%,    /* Azul */
+        #2ecc71 25%,   /* Verde */
+        #f1c40f 50%,   /* Amarillo */
+        #e67e22 75%,   /* Anaranjado */
+        #e74c3c 100%   /* Rojo */
+      );
+      border-radius: 15px;
+      position: relative;
+    }
+
+    .effectiveness-text {
+      font-family: 'AA Smart Sans', sans-serif;
+      font-size: 14px;
+      color: #031795;
+      text-align: center;
+      margin: 10px 0;
+      font-weight: bold;
+      width: 120px;
+    }
+
+    .effectiveness-top {
+      margin-bottom: 10px;
+    }
+
+    .effectiveness-bottom {
+      margin-top: 10px;
+    }
+
+    .pyramid-container {
+      grid-column: 2;
       padding: 0 4%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
     }
 
     .logo {
       position: absolute;
       width: 150px;
       top: 20px;
-      left: 20px;
+      right: 20px;
       z-index: 1000;
     }
 
-    .pyramid-container {
-      flex: 1;
-      max-width: 40%;
+    .pyramid {
       perspective: 1000px;
       cursor: pointer;
-      margin-right: 8%;
-      margin-left: 5%;
-      transform: translateX(0);
-      order: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      max-width: 800px;
     }
 
     .pyramid {
@@ -53,7 +107,9 @@
       transform: rotateX(15deg) rotateY(-10deg);
       transform-style: preserve-3d;
       animation: slideIn 1s ease-out;
-      margin-left: 20px;
+      padding: 0;
+      margin: 0;
+      list-style: none;
     }
 
     .level {
@@ -66,6 +122,7 @@
       transform-style: preserve-3d;
       border-radius: 8px;
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+      cursor: pointer;
     }
 
     /* Tamaños invertidos (grande arriba, pequeño abajo) */
@@ -151,92 +208,15 @@
 
     .title {
       text-align: center;
-      color: white;
-      font-size: 24px;
+      color: #031795;
+      font-family: 'AA Smart Sans', sans-serif;
+      font-size: 30px;
       font-weight: bold;
-      margin-bottom: 30px;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    }
-
-    .text-container {
-      flex: 1;
-      max-width: 40%;
-      padding-right: 20px;
-      margin-right: 0;
-      order: 1;
-      margin-left: 8%;
-    }
-
-    .subtitle {
-      font-family: 'AA Smart Sans';
-      font-weight: 300;
-      font-size: 21.29px;
-      line-height: 100%;
-      letter-spacing: 0px;
-      margin-bottom: 20px;
-      color: #031795;
-    }
-
-    .main-title {
-      font-family: 'AA Smart Sans';
-      font-weight: 300;
-      font-size: 50px;
-      line-height: 100%;
-      letter-spacing: 0px;
-      margin-bottom: 30px;
-      color: #031795;
-    }
-
-    .section-title {
-      font-family: 'AA Smart Sans';
-      font-weight: 700;
-      font-size: 25px;
-      line-height: 100%;
-      letter-spacing: 0px;
-      text-align: justify;
-      margin-bottom: 20px;
-    }
-
-    .content-list {
-      font-family: 'AA Smart Sans';
-      font-weight: 300;
-      font-size: 25px;
-      line-height: 100%;
-      letter-spacing: 0px;
-      text-align: justify;
-      list-style: none;
-      padding-left: 0;
-      color: #777A7F;
-    }
-
-    .content-list li {
-      margin-bottom: 15px;
-      position: relative;
+      margin-bottom: 50px;
+      width: 100%;
     }
 
     @media (max-width: 1366px) {
-      body {
-        padding: 0 3%;
-      }
-      
-      .pyramid-container {
-        margin-right: 6%;
-        margin-left: 4%;
-      }
-
-      .text-container {
-        margin-left: 6%;
-      }
-
-      .main-title {
-        font-size: 40px;
-      }
-
-      .section-title,
-      .content-list {
-        font-size: 22px;
-      }
-
       .level:nth-child(1) { width: 500px; }
       .level:nth-child(2) { width: 400px; }
       .level:nth-child(3) { width: 300px; }
@@ -253,19 +233,6 @@
     }
 
     @media (max-width: 1024px) {
-      .pyramid-container {
-        margin-right: 4%;
-        margin-left: 3%;
-      }
-
-      .text-container {
-        margin-left: 4%;
-      }
-
-      .main-title {
-        font-size: 35px;
-      }
-
       .level:nth-child(1) { width: 400px; }
       .level:nth-child(2) { width: 320px; }
       .level:nth-child(3) { width: 240px; }
@@ -279,35 +246,87 @@
       .level p {
         font-size: 18px;
       }
+    }
 
-      .content-list {
-        font-size: 20px;
+    @media (max-width: 768px) {
+      .level:nth-child(1) { width: 300px; }
+      .level:nth-child(2) { width: 250px; }
+      .level:nth-child(3) { width: 200px; }
+      .level:nth-child(4) { width: 150px; }
+      .level:nth-child(5) { width: 100px; }
+
+      .level {
+        padding: 15px;
       }
+
+      .level p {
+        font-size: 16px;
+      }
+
+      .title {
+        font-size: 24px;
+        margin-bottom: 30px;
+      }
+    }
+
+    .tooltip {
+      position: fixed;
+      right: 50px;
+      background-color: #FFFFFF;
+      color: #031795;
+      padding: 20px 30px;
+      border-radius: 10px;
+      font-family: 'AA Smart Sans', sans-serif;
+      font-size: 16px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+      max-width: 300px;
+      text-align: center;
+      box-shadow: 0px 4px 29.2px 3px #031795BD,
+                  0px 4px 4px 0px #00000040;
+      font-weight: 500;
+      transform: none;
     }
   </style>
 </head>
 <body>
-  <img src="../assets/images/logo_color.png" alt="Logo" class="logo">
-  <div class="text-container">
-    <p class="subtitle">Seguridad en tareas de mantenimiento</p>
-    <h2 class="main-title">1.2. Sistema integrado de seguridad</h2>
-    <ul class="content-list">
-      <li>ATS Análisis de Trabajo Seguro.</li>
-      <li>Práctica de mantenimiento para el control de riesgos.</li>
-      <li>Condiciones del área para un trabajo seguro.</li>
-      <li>Equipo de protección personal EPP.</li>
-    </ul>
+  <div class="heat-bar-container">
+    <p class="effectiveness-text effectiveness-top">Mayor Efectividad</p>
+    <div class="heat-bar"></div>
+    <p class="effectiveness-text effectiveness-bottom">Menor Efectividad</p>
   </div>
-
   <div class="pyramid-container">
     <h1 class="title">Jerarquía de Controles de Seguridad</h1>
     <ul class="pyramid">
-      <li class="level"><p>Eliminación</p></li>
-      <li class="level"><p>Sustitución</p></li>
-      <li class="level"><p>Controles técnicos</p></li>
-      <li class="level"><p>Controles administrativos</p></li>
-      <li class="level"><p>PPE</p></li>
+      <li class="level" data-level="1" data-text="Eliminar físicamente el peligro"><p>Eliminación</p></li>
+      <li class="level" data-level="2" data-text="Reemplazar el peligro"><p>Sustitución</p></li>
+      <li class="level" data-level="3" data-text="Aislar a las personas del peligro"><p>Controles técnicos</p></li>
+      <li class="level" data-level="4" data-text="Cambiar el modo de trabajo de las personas"><p>Controles administrativos</p></li>
+      <li class="level" data-level="5" data-text="Protección del trabajador con Equipo de Protección Personal"><p>PPE</p></li>
     </ul>
   </div>
+  <div></div>
+  <div class="tooltip"></div>
+  <img src="../assets/images/logo_color.png" alt="Logo" class="logo">
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const tooltip = document.querySelector('.tooltip');
+      const levels = document.querySelectorAll('.level');
+
+      levels.forEach(level => {
+        level.addEventListener('mouseenter', function(e) {
+          tooltip.textContent = this.dataset.text;
+          tooltip.style.opacity = '1';
+          tooltip.style.top = `${e.target.getBoundingClientRect().top}px`;
+        });
+
+        level.addEventListener('mouseleave', function() {
+          tooltip.style.opacity = '0';
+        });
+      });
+    });
+  </script>
 </body>
 </html>
