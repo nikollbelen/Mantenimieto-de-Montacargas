@@ -1,0 +1,230 @@
+@font-face {
+    font-family: 'AA Smart Sans';
+    src: url('../fonts/AASMARTSANS-SEMIBOLD.TTF') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'AA Smart Sans';
+    src: url('../fonts/AASMARTSANS-BOLD.TTF') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'AA Smart Sans', sans-serif;
+    min-height: 100vh;
+    background: #ffffff;
+    position: relative;
+    overflow-x: hidden;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        url('../images/right.png') right center/auto 100% no-repeat,
+        #ffffff;
+    z-index: -1;
+}
+
+.page-container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem;
+    position: relative;
+    background: url('../images/flecha.png') center center/auto 100% no-repeat;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.logo {
+    width: 180px;
+    height: auto;
+    margin-bottom: 3rem;
+}
+
+.content-section {
+    padding-left: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8rem;
+    max-width: 100%;
+    padding: 0 4rem;
+    flex: 1;
+}
+
+.header-section {
+    margin-bottom: 0;
+    flex: 0 0 40%;
+}
+
+.subtitle {
+    color: #243f90;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.title {
+    color: #243f90;
+    font-size: 2.2rem;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.accordion-container {
+    flex: 0 0 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.accordion-item {
+    margin-bottom: 1.5rem;
+}
+
+.accordion-button {
+    width: 100%;
+    background: #ffffff;
+    border: none;
+    border-radius: 10px;
+    padding: 1.2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.accordion-button:hover {
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+.button-text {
+    color: #243f90;
+    font-size: 1rem;
+    text-align: left;
+    padding-right: 2rem;
+    font-weight: 500;
+}
+
+.plus-icon {
+    color: #243f90;
+    font-size: 1.5rem;
+    font-weight: 300;
+    min-width: 24px;
+    text-align: center;
+}
+
+.accordion-content {
+    background: #ffffff;
+    padding: 0 1.2rem;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+    border-radius: 0 0 10px 10px;
+}
+
+.accordion-content p {
+    padding: 1.2rem 0;
+    color: #666;
+}
+
+.accordion-item.active .accordion-button {
+    border-radius: 10px 10px 0 0;
+}
+
+.accordion-item.active .accordion-content {
+    max-height: 500px;
+    border-top: 1px solid #eee;
+}
+
+.accordion-item.active .plus-icon {
+    transform: rotate(45deg);
+}
+
+@media (max-width: 1200px) {
+    .content-section {
+        gap: 4rem;
+        padding: 0 2rem;
+    }
+    
+    .header-section {
+        flex: 0 0 45%;
+    }
+    
+    .accordion-container {
+        flex: 0 0 55%;
+    }
+}
+
+@media (max-width: 768px) {
+    .content-section {
+        flex-direction: column;
+        gap: 2rem;
+        padding: 0 1rem;
+    }
+
+    .header-section,
+    .accordion-container {
+        flex: 0 0 100%;
+    }
+
+    .page-container {
+        padding: 1rem;
+        background-size: 100% auto;
+    }
+
+    .title {
+        font-size: 1.8rem;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+    }
+
+    .button-text {
+        font-size: 0.9rem;
+    }
+
+    body::before {
+        background: 
+            linear-gradient(135deg, 
+                rgba(255, 255, 255, 0.95) 0%,
+                rgba(230, 220, 240, 0.95) 30%,
+                rgba(200, 180, 220, 0.95) 60%,
+                rgba(180, 200, 255, 0.95) 100%
+            );
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        width: 140px;
+        margin-bottom: 2rem;
+    }
+
+    .title {
+        font-size: 1.5rem;
+    }
+
+    .accordion-button {
+        padding: 1rem;
+    }
+} 

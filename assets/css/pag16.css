@@ -1,0 +1,224 @@
+@font-face {
+    font-family: 'AA Smart Sans';
+    src: url('../fonts/AASMARTSANS-BOLD.TTF') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'AA Smart Sans';
+    src: url('../fonts/AASMARTSANS-REGULAR.TTF') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'AA Smart Sans', sans-serif;
+    min-height: 100vh;
+    background: #ffffff;
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../images/top.png') top center/100% auto no-repeat,
+                url('../images/bottom.png') bottom center/100% auto no-repeat;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.page-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem;
+    position: relative;
+}
+
+.logo {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    width: 180px;
+    height: auto;
+}
+
+.content {
+    padding-top: 2rem;
+}
+
+.title-image {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    display: block;
+}
+
+.title {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    font-weight: bold;
+}
+
+.title .red {
+    color: #ff0000;
+}
+
+.title .purple {
+    color: #8000ff;
+}
+
+.title .blue {
+    color: #243f90;
+}
+
+.main-content {
+    display: flex;
+    gap: 4rem;
+    margin-top: 2rem;
+}
+
+.left-section {
+    flex: 1;
+    max-width: 50%;
+}
+
+.subtitle {
+    color: #243f90;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.conditions-list {
+    list-style: none;
+    padding: 0;
+}
+
+.conditions-list li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+    color: #243f90;
+    line-height: 1.4;
+}
+
+.conditions-list li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: #243f90;
+}
+
+/* Carrusel */
+.right-section {
+    flex: 1;
+    max-width: 50%;
+}
+
+.carousel-container {
+    position: relative;
+    width: 100%;
+    background: white;
+    border-radius: 15px;
+    padding: 1rem;
+    box-shadow:  0px 4px 4px 0px rgba(0, 0, 0, 0.25), 0px 4px 29.2px 3px rgba(3, 23, 149, 0.31);
+    border: 2px solid #243f90;
+}
+
+.carousel-content {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    aspect-ratio: 16/9;
+}
+
+.carousel-slide {
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.8);
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    color: #243f90;
+    cursor: pointer;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-button.prev {
+    left: -20px;
+}
+
+.carousel-button.next {
+    right: -20px;
+}
+
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #ccc;
+    cursor: pointer;
+}
+
+.dot.active {
+    background: #243f90;
+}
+
+.folder-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #9F2B6A 0%, #243f90 100%);
+    box-shadow: 0 0 20px rgba(128, 0, 255, 0.5);
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.folder-button img {
+    width: 30px;
+    height: 30px;
+    filter: brightness(0) invert(1);
+}
+
+.folder-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 30px rgba(128, 0, 255, 0.7);
+} 

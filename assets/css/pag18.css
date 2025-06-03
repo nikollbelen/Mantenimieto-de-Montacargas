@@ -1,0 +1,216 @@
+/* Estilos base */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'AA Smart Sans', sans-serif;
+    background: #002D86;
+    min-height: 100vh;
+    color: white;
+}
+
+.page-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem;
+    position: relative;
+}
+
+.logo {
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    width: 180px;
+    height: auto;
+}
+
+.content {
+    padding-top: 100px;
+}
+
+/* Estilos de las tarjetas */
+.info-card {
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    padding: 1.5rem;
+    margin: 1rem;
+    backdrop-filter: blur(10px);
+    position: relative;
+    width: 400px;
+}
+
+.card-content {
+    position: relative;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+}
+
+.card-header h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    flex: 1;
+    padding-right: 1rem;
+}
+
+.card-icon {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+}
+
+.info-card p {
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+/* Layout de las tarjetas */
+.cards-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+
+.middle-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.cards-column {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* Contenido central */
+.center-content {
+    position: relative;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 2rem;
+    height: 500px;
+}
+
+.forklift-model {
+    width: 100%;
+    height: 100%;
+    --poster-color: transparent;
+    --progress-bar-color: #ffffff;
+    --progress-bar-height: 2px;
+}
+
+/* Progress bar styles */
+.progress-bar {
+    display: block;
+    width: 100%;
+    height: 2px;
+    max-width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    border-radius: 1px;
+    background-color: rgba(255, 255, 255, 0.2);
+    overflow: hidden;
+}
+
+.progress-bar.hide {
+    visibility: hidden;
+}
+
+.update-bar {
+    background-color: #ffffff;
+    width: 0%;
+    height: 100%;
+    border-radius: 1px;
+    transition: width 0.3s ease;
+}
+
+/* Círculos con iconos */
+.circles-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.circle-icon {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #002D86;
+    border: 2px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.circle-icon::before {
+    content: '';
+    width: 30px;
+    height: 30px;
+    background-image: url('../images/icons/manual.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.circle-icon.manual {
+    top: 10%;
+    left: 20%;
+}
+
+.circle-icon.warning {
+    top: 20%;
+    right: 15%;
+    transform: rotate(90deg);
+}
+
+.circle-icon.tools {
+    bottom: 20%;
+    left: 15%;
+    transform: rotate(-90deg);
+}
+
+.circle-icon.safety {
+    bottom: 10%;
+    right: 20%;
+    transform: rotate(180deg);
+}
+
+/* Efectos visuales */
+.info-card::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 50px;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.cards-column.left .info-card::after {
+    right: -50px;
+}
+
+.cards-column.right .info-card::after {
+    left: -50px;
+}
+
+/* Círculos de fondo */
+.center-content::before {
+    content: '';
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+    border-radius: 50%;
+    z-index: 0;
+} 

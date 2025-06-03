@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Montacargas Animación</title>
+    <link rel="stylesheet" href="../assets/css/fonts.css">
+    <link rel="stylesheet" href="../assets/libs/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/pagina18.css">
+    <!-- Import model-viewer component -->
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.3.0/model-viewer.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="model-container">
+            <div class="model-card">
+                <model-viewer 
+                    id="forklift-model"
+                    camera-controls 
+                    touch-action="pan-y" 
+                    touch-action="pan-x" 
+                    interaction-policy="allow-when-focused" 
+                    shadow-intensity="1" 
+                    environment-image="neutral" 
+                    exposure="1" 
+                    shadow-softness="1" 
+                    camera-orbit="0deg 75deg 105%" 
+                    src="../assets/models/MontaCargas/Monta cargas.glb"
+                    alt="Montacargas 3D model" 
+                    loading="eager" 
+                    animation-name="Animation"
+                    autoplay="false"
+                    interaction-prompt="none">
+                    <div class="progress-bar hide" slot="progress-bar">
+                        <div class="update-bar"></div>
+                    </div>
+                </model-viewer>
+                <button id="explosion-btn" class="animation-button">Explosión</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const model = document.querySelector('#forklift-model');
+            const explosionBtn = document.querySelector('#explosion-btn');
+            
+            explosionBtn.addEventListener('click', () => {
+                // Reset animation to beginning
+                model.currentTime = 0;
+                // Set animation timeScale to control speed if needed
+                model.timeScale = 1;
+                // Play animation from frame 0 to 50
+                model.play({repetitions: 1});
+                
+                // Stop at frame 50
+                setTimeout(() => {
+                    if (model.currentTime >= 50/30) { // Converting frames to seconds (assuming 30fps)
+                        model.pause();
+                    }
+                }, (50/30) * 1000); // Convert frames to milliseconds
+            });
+        });
+    </script>
+</body>
+</html> 

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mantenimiento de Montacargas</title>
+    <link rel="stylesheet" href="../assets/css/fonts.css">
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.3.0/model-viewer.min.js"></script>
+    <link rel="stylesheet" href="../assets/css/pag18.css">
+</head>
+<body>
+    <div class="page-container">
+        <img src="../assets/images/logo_blanco.png" alt="AngloAmerican Logo" class="logo">
+
+        <div class="content">
+            <!-- Tarjetas superiores -->
+            <div class="cards-row top">
+                <div class="info-card left">
+                    <div class="card-content">
+                        <div class="card-header">
+                            <h3>Manual de operación y mantenimiento</h3>
+                            <img src="../assets/images/icons/manual.png" alt="Manual Icon" class="card-icon">
+                        </div>
+                        <p>Lea y comprenda las instrucciones de operación, inspección y mantenimiento contenidas en el manual de operación y mantenimiento, y los etiquetas en el montacargas.</p>
+                    </div>
+                </div>
+                <div class="info-card right">
+                    <div class="card-content">
+                        <div class="card-header">
+                            <h3>Uso adecuado de EPP</h3>
+                            <img src="../assets/images/icons/manual.png" alt="Manual Icon" class="card-icon">
+                        </div>
+                        <p>Siga los lineamientos de su empleador para el equipo de protección.<br>Use el equipo de protección personal correcto para las condiciones de sus lugares de trabajo.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tarjetas laterales -->
+            <div class="middle-section">
+                <div class="cards-column left">
+                    <div class="info-card">
+                        <div class="card-content">
+                            <div class="card-header">
+                                <h3>No modificar la estructura original de la máquina</h3>
+                                <img src="../assets/images/icons/manual.png" alt="Manual Icon" class="card-icon">
+                            </div>
+                            <p>No realice ninguna modificación que afecte la capacidad o la seguridad sin autorización por escrito o hacerlo. Cualquier cambio aprobado por el fabricante requiere de una placa y calcomanías de capacidad nuevas luego de la modificación.</p>
+                        </div>
+                    </div>
+                    <div class="info-card">
+                        <div class="card-content">
+                            <div class="card-header">
+                                <h3>Apague el interruptor de encendido antes de dar servicio</h3>
+                                <img src="../assets/images/icons/manual.png" alt="Manual Icon" class="card-icon">
+                            </div>
+                            <p>No dé servicio a este montacargas mientras el motor está funcionando a menos que sea absolutamente necesario.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Montacargas central y círculos -->
+                <div class="center-content">
+                    <div class="circles-container">
+                        <div class="circle-icon manual"></div>
+                        <div class="circle-icon warning"></div>
+                        <div class="circle-icon tools"></div>
+                        <div class="circle-icon safety"></div>
+                    </div>
+                    <model-viewer 
+                        id="forklift-model"
+                        camera-controls 
+                        touch-action="pan-y" 
+                        touch-action="pan-x" 
+                        interaction-policy="allow-when-focused" 
+                        shadow-intensity="1" 
+                        environment-image="neutral" 
+                        exposure="1" 
+                        shadow-softness="1" 
+                        camera-orbit="0deg 75deg 105%" 
+                        src="../assets/models/MontaCargas/Monta cargas.glb"
+                        alt="Montacargas 3D model" 
+                        loading="eager" 
+                        animation-name="Animation"
+                        autoplay="false"
+                        interaction-prompt="none"
+                        class="forklift-model">
+                        <div class="progress-bar hide" slot="progress-bar">
+                            <div class="update-bar"></div>
+                        </div>
+                    </model-viewer>
+                </div>
+
+                <div class="cards-column right">
+                    <div class="info-card">
+                        <div class="card-content">
+                            <div class="card-header">
+                                <h3>¡Manténgase alejado de los puntos de pellizco!</h3>
+                                <img src="../assets/images/icons/manual.png" alt="Manual Icon" class="card-icon">
+                            </div>
+                            <p>Nunca coloque ninguna parte del cuerpo entre el mástil y la guarda superior, ya que un movimiento inesperado podría atraparlo y causarle un accidente grave.</p>
+                        </div>
+                    </div>
+                    <div class="info-card">
+                        <div class="card-content">
+                            <div class="card-header">
+                                <h3>¡Tenga cuidado con el personal!</h3>
+                                <img src="../assets/images/icons/manual.png" alt="Manual Icon" class="card-icon">
+                            </div>
+                            <p>NO permita que ninguna persona permanezca de pie o camine debajo de las horquillas elevadas.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 
