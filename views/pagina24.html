@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página 24</title>
+  <link rel="stylesheet" href="../assets/css/variables.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    body {
+      margin: 0;
+      background: linear-gradient(to top, #031795, #034CC0);
+      font-family: 'Arial', sans-serif;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0 4%;
+    }
+
+    .background-image {
+      position: absolute;
+      left: -5%;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 50%;
+      height: auto;
+      aspect-ratio: 1/1;
+      background: none;
+      z-index: 1;
+    }
+
+    .background-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      opacity: 0.15;
+      mix-blend-mode: soft-light;
+    }
+
+    .logo {
+      position: absolute;
+      width: 150px;
+      top: 20px;
+      left: 20px;
+      z-index: 1000;
+    }
+
+    .content-block {
+      display: flex;
+      width: 687px;
+      height: 80vh;
+      padding: 55px 65px;
+      flex-direction: column;
+      align-items: center;
+      gap: 46px;
+      border-radius: 20.076px;
+      border: 2px solid var(--GRADIENT, #62B6DA);
+      background: #FFF;
+      z-index: 2;
+    }
+
+    .title {
+      flex: 1 0 0;
+      color: #031795;
+      font-feature-settings: 'liga' off, 'clig' off;
+      font-family: "AA Smart Sans";
+      font-size: 30px;
+      font-style: normal;
+      font-weight: 300;
+      line-height: normal;
+    }
+
+    .capacity-image {
+      width: 80%;
+      height: auto;
+      border-radius: 20px;
+      background: #FFF;
+      box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.15);
+    }
+
+    .capacity-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      border-radius: 20px;
+    }
+
+    .description {
+      align-self: stretch;
+      color: #031795;
+      font-feature-settings: 'liga' off, 'clig' off;
+      font-family: "AA Smart Sans";
+      font-size: 15px;
+      font-style: normal;
+      font-weight: 300;
+      line-height: normal;
+    }
+  </style>
+</head>
+<body>
+  <div class="background-image">
+    <img src="../assets/images/montacargas_1.png" alt="Montacargas">
+  </div>
+  <img src="../assets/images/logo_blanco.png" alt="Logo" class="logo">
+  <div class="content-block">
+    <h1 class="title">Etiqueta de capacidad</h1>
+    <div class="capacity-image">
+      <img src="../assets/images/etiqueta_capacidad.png" alt="Etiqueta de capacidad">
+    </div>
+    <p class="description">Antes de intentar recoger o elevar una carga, asegúrese de que su peso se encuentre dentro de la capacidad del montacargas en el centro de la carga considerada.</p>
+  </div>
+</body>
+</html>
