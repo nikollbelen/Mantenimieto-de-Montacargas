@@ -324,5 +324,48 @@
     <p class="content-text">Tenemos que enfocarnos en prevenir accidentes y problemas que puedan surgir durante las tareas de mantenimiento, asegurando la seguridad de los trabajadores y el buen funcionamiento de los equipos.</p>
     <p class="content-text">Esto se logra mediante la identificación, evaluación y mitigación de riesgos, la implementación de medidas de seguridad y la capacitación del personal.</p>
   </div>
+
+  <!-- Elemento de audio para la música de fondo -->
+  <audio id="backgroundAudio" src="../assets/audio/pagina15_3.mp3" preload="auto"></audio>
+
+  <script>
+    // Espera a que la ventana se cargue completamente
+    window.onload = function() {
+      const audio = document.getElementById('backgroundAudio');
+      let hasInteracted = false; // Bandera para controlar la interacción del usuario
+
+      // Función para intentar reproducir el audio
+      function playAudio() {
+        // Solo intenta reproducir si el audio está pausado
+        if (audio.paused) {
+          const playPromise = audio.play();
+          if (playPromise !== undefined) {
+            playPromise.then(_ => {
+              console.log("Audio reproduciéndose.");
+            }).catch(error => {
+              console.log("Reproducción de audio fallida o bloqueada:", error);
+              // Si falla, es probable que necesite interacción del usuario.
+            });
+          }
+        }
+      }
+
+      // Intenta reproducir el audio después de 1 segundo (autoplay)
+      setTimeout(() => {
+        if (!hasInteracted) { // Solo intenta autoplay si no ha habido interacción previa
+            console.log("Intentando reproducción automática después de 1 segundo...");
+            playAudio();
+        }
+      }, 1000); // 1000 milisegundos = 1 segundo
+
+      // Event listener para el clic en cualquier parte del documento
+      document.body.addEventListener('click', function() {
+        hasInteracted = true; // El usuario ha interactuado
+        console.log("Clic detectado en la página. Intentando reproducir audio...");
+        playAudio();
+      }, { once: true }); // { once: true } asegura que este listener se active solo una vez para el primer clic.
+                         // Si se quita, cada clic intentará reproducir el audio (si está pausado).
+    };
+  </script>
 </body>
 </html>
