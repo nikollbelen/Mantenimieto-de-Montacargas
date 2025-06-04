@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const cardsContainer = document.querySelector('.cards-container');
     const cards = document.querySelectorAll('.card');
-    const dots = document.querySelectorAll('.dot');
+    const dotsContainer = document.querySelector('.carousel-dots');
     const prevBtn = document.getElementById('prevBtn');
     const nextBtn = document.getElementById('nextBtn');
     
@@ -14,6 +14,21 @@ document.addEventListener('DOMContentLoaded', () => {
         if (window.innerWidth <= 1400) return 2;
         return 4;
     }
+    
+    // Create dots dynamically
+    dotsContainer.innerHTML = '';
+    for (let i = 0; i < totalPages; i++) {
+        const dot = document.createElement('span');
+        dot.classList.add('dot');
+        if (i === 0) dot.classList.add('active');
+        dot.addEventListener('click', () => {
+            currentPage = i;
+            updateCarousel();
+        });
+        dotsContainer.appendChild(dot);
+    }
+    
+    const dots = document.querySelectorAll('.dot');
     
     // Initialize
     updateCarousel();
@@ -31,14 +46,6 @@ document.addEventListener('DOMContentLoaded', () => {
             currentPage++;
             updateCarousel();
         }
-    });
-    
-    // Dot navigation
-    dots.forEach((dot, index) => {
-        dot.addEventListener('click', () => {
-            currentPage = index;
-            updateCarousel();
-        });
     });
     
     function updateCarousel() {

@@ -8,12 +8,49 @@
     <link rel="stylesheet" href="../assets/libs/fontawesome/css/all.min.css">
     <link rel="stylesheet" href="../assets/css/audio-player.css">
     <script src="../assets/libs/wavesurfer/wavesurfer.min.js"></script>
+    <style>
+        .header-images {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .title-image {
+            max-height: 4vh;
+            width: auto;
+        }
+        .logo-image {
+            max-height: 50px;
+            width: auto;
+        }
+        .decorative-image {
+            width: 100%;
+            height: auto;
+            position: fixed;
+            left: 0;
+            z-index: -1;
+        }
+        .top-image {
+            top: 0;
+        }
+        .bottom-image {
+            bottom: 0;
+        }
+    </style>
 </head>
 <body>
+    <img src="../assets/images/top.png" alt="Decoración superior" class="decorative-image top-image">
+    <div class="header-images">
+       
+        <img src="../assets/images/logo_color.png" alt="Logo" class="logo-image">
+    </div>
     <div class="container">
         <div class="audio-player-container">
             <div class="player-header">
-                <h2 id="audio-title">Seguridad en tareas de mantenimiento</h2>
+                <img src="../assets/images/titulo_pag11.png" alt="Título" class="title-image">
+                <h2 id="audio-title" style="color:white;font-size:1px;">Seguridad en tareas de mantenimiento</h2>
                 <span id="time-display">00:00 / 00:00</span>
             </div>
 
@@ -45,6 +82,7 @@
             </div>
         </div>
     </div>
+    <img src="../assets/images/bottom.png" alt="Decoración inferior" class="decorative-image bottom-image">
     <script src="../js/audio-player.js"></script>
 </body>
 </html> 
