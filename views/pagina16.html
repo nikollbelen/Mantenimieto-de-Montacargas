@@ -16,41 +16,30 @@
 
             <div class="main-content">
                 <div class="left-section">
-                    <h2 class="subtitle">Condiciones en el área de trabajo</h2>
-                    <ul class="conditions-list">
-                        <li>Las instalaciones de lavado de equipos deberá estar equipada con equipo de lavado de alto volumen.</li>
-                        <li>Aplicar los procedimientos de lavado de todas las máquinas y componentes antes de que ingresen a la nave del taller.</li>
-                        <li>Las tuberías de suministro de aceite del taller están equipadas con filtro final y el aceite entregado cumple con el objetivo de limpieza.</li>
-                        <li>Debe haber una plataforma de hormigón a la entrada del taller para evitar el ingreso de suciedad y lodo en el taller.</li>
-                        <li>Mantener el orden y limpieza en bancos de trabajo y en todas las áreas de taller, utilización de carro con Kit (completo) de tapones plásticos para la protección de los sistemas desarmados (nuevos o usados). Para accesibilidad del técnico se utiliza un muestrario de tapones que incluyen pin y diámetro.</li>
+                    <h2 class="subtitle" id="sectionTitle">Condiciones en el área de trabajo</h2>
+                    <ul class="conditions-list" id="conditionsList">
+                        <!-- Lista de condiciones se llenará dinámicamente -->
                     </ul>
                 </div>
 
                 <div class="right-section">
                     <div class="carousel-container">
                         <button class="carousel-button prev" id="prevBtn">&lt;</button>
-                        <div class="carousel-content">
-                            <div class="carousel-slide">
-                                <img src="../assets/images/condiciones/1.png" alt="Imagen 1">
-                            </div>
+                        <div class="carousel-content" id="carouselContent">
+                            <!-- Las imágenes se cargarán dinámicamente -->
                         </div>
                         <button class="carousel-button next" id="nextBtn">&gt;</button>
-                        <div class="carousel-dots">
-                            <span class="dot active"></span>
-                            <span class="dot"></span>
-                            <span class="dot"></span>
-                            <span class="dot"></span>
-                            <span class="dot"></span>
-                            <span class="dot"></span>
+                        <div class="carousel-dots" id="carouselDots">
+                            <!-- Los dots se generarán dinámicamente -->
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <a href="#" class="folder-button">
-        <img src="../assets/images/icons/archivo.png" alt="Archivo">
-    </a>
+    <button class="next-section-button" id="nextSectionBtn">
+        <img src="../assets/images/siguiente.png" alt="">
+    </button>
     <script src="../assets/js/pag16.js"></script>
 </body>
 </html> 

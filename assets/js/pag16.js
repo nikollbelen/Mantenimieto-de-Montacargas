@@ -1,67 +1,88 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const carousel = document.querySelector('.carousel-content');
-    const dots = document.querySelectorAll('.dot');
+document.addEventListener('DOMContentLoaded', async () => {
+    // Variables globales
+    let currentSectionIndex = 0;
+    let currentImageIndex = 0;
+    let contentData = null;
+    
+    // Elementos del DOM
+    const sectionTitle = document.getElementById('sectionTitle');
+    const conditionsList = document.getElementById('conditionsList');
+    const carouselContent = document.getElementById('carouselContent');
+    const carouselDots = document.getElementById('carouselDots');
     const prevBtn = document.getElementById('prevBtn');
     const nextBtn = document.getElementById('nextBtn');
+    const nextSectionBtn = document.getElementById('nextSectionBtn');
 
-    let currentSlide = 0;
-    const totalSlides = 6; // Total number of slides
-
-    // Clear existing content
-    carousel.innerHTML = '';
-
-    // Create all slides dynamically
-    for (let i = 1; i <= totalSlides; i++) {
-        const slide = document.createElement('div');
-        slide.className = 'carousel-slide';
-        slide.style.display = 'none';
-        const img = document.createElement('img');
-        img.src = `../assets/images/condiciones/${i}.png`;
-        img.alt = `Imagen ${i}`;
-        slide.appendChild(img);
-        carousel.appendChild(slide);
+    // Cargar datos del JSON
+    try {
+        const response = await fetch('../assets/data/pagina16_content.json');
+        contentData = await response.json();
+        updateContent();
+        updateCarousel();
+    } catch (error) {
+        console.error('Error cargando el contenido:', error);
     }
 
-    // Get all slides after creation
-    const slides = document.querySelectorAll('.carousel-slide');
-
-    // Function to update slide display
-    function showSlide(n) {
-        // Ensure n is within bounds
-        n = ((n % totalSlides) + totalSlides) % totalSlides;
-
-        // Hide all slides
-        slides.forEach(slide => slide.style.display = 'none');
-        // Remove active class from all dots
-        dots.forEach(dot => dot.classList.remove('active'));
-
-        // Show current slide and activate corresponding dot
-        slides[n].style.display = 'block';
-        dots[n].classList.add('active');
-        currentSlide = n;
+    // Función para actualizar el contenido de la sección
+    function updateContent() {
+        const currentSection = contentData.sections[currentSectionIndex];
+        
+        // Actualizar título
+        sectionTitle.textContent = currentSection.title;
+        
+        // Actualizar lista de condiciones
+        conditionsList.innerHTML = currentSection.conditions
+            .map(condition => `<li>${condition}</li>`)
+            .join('');
+        
+        // Actualizar carrusel
+        currentImageIndex = 0;
+        updateCarousel();
     }
 
-    // Event listeners for next/prev buttons
-    nextBtn.addEventListener('click', () => {
-        showSlide(currentSlide + 1);
-    });
-
-    prevBtn.addEventListener('click', () => {
-        showSlide(currentSlide - 1);
-    });
-
-    // Event listeners for dots
-    dots.forEach((dot, index) => {
-        dot.addEventListener('click', () => {
-            showSlide(index);
+    // Función para actualizar el carrusel
+    function updateCarousel() {
+        const currentSection = contentData.sections[currentSectionIndex];
+        
+        // Actualizar imagen
+        carouselContent.innerHTML = `
+            <div class="carousel-slide">
+                <img src="${currentSection.images[currentImageIndex]}" alt="Imagen ${currentImageIndex + 1}">
+            </div>
+        `;
+        
+        // Actualizar dots
+        carouselDots.innerHTML = currentSection.images
+            .map((_, index) => `
+                <span class="dot ${index === currentImageIndex ? 'active' : ''}"></span>
+            `)
+            .join('');
+        
+        // Agregar eventos a los dots
+        document.querySelectorAll('.dot').forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                currentImageIndex = index;
+                updateCarousel();
+            });
         });
+    }
+
+    // Evento para el botón de siguiente sección
+    nextSectionBtn.addEventListener('click', () => {
+        currentSectionIndex = (currentSectionIndex + 1) % contentData.sections.length;
+        updateContent();
     });
 
-    // Show initial slide
-    showSlide(0);
+    // Eventos para los botones del carrusel
+    prevBtn.addEventListener('click', () => {
+        const currentSection = contentData.sections[currentSectionIndex];
+        currentImageIndex = (currentImageIndex - 1 + currentSection.images.length) % currentSection.images.length;
+        updateCarousel();
+    });
 
-    // Auto advance slides every 5 seconds
-    setInterval(() => {
-        showSlide(currentSlide + 1);
-    }, 5000);
+    nextBtn.addEventListener('click', () => {
+        const currentSection = contentData.sections[currentSectionIndex];
+        currentImageIndex = (currentImageIndex + 1) % currentSection.images.length;
+        updateCarousel();
+    });
 }); 

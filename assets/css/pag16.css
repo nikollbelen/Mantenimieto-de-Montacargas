@@ -221,4 +221,34 @@ body::before {
 .folder-button:hover {
     transform: scale(1.1);
     box-shadow: 0 0 30px rgba(128, 0, 255, 0.7);
+}
+
+.next-section-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #9F2B6A 0%, #243f90 100%);
+    box-shadow: 0 0 20px rgba(128, 0, 255, 0.5);
+    transition: all 0.3s ease;
+    z-index: 1000;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.next-section-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 30px rgba(128, 0, 255, 0.7);
+}
+
+.next-section-button img {
+    width: 30px;
+    height: 30px;
+    filter: brightness(0) invert(1);
 } 
