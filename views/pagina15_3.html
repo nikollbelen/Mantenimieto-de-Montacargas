@@ -20,7 +20,7 @@
 
     body {
       margin: 0;
-      background: #FFFFFF;
+      background: linear-gradient(to top, #031795, #034CC0);
       font-family: 'Arial', sans-serif;
       position: relative;
       display: flex;
@@ -42,15 +42,14 @@
       max-width: 40%;
       perspective: 1000px;
       cursor: pointer;
-      margin-right: 8%;
-      margin-left: 5%;
+      margin-left: 8%;
+      margin-right: 5%;
       transform: translateX(0);
-      order: 2;
     }
 
     .pyramid {
       position: relative;
-      transform: rotateX(15deg) rotateY(-10deg);
+      transform: rotateX(0deg) rotateY(0deg);
       transform-style: preserve-3d;
       animation: slideIn 1s ease-out;
       margin-left: 20px;
@@ -76,11 +75,11 @@
     .level:nth-child(5) { width: 200px; }
 
     /* Colores base */
-    .level:nth-child(1) { background: #3498db; z-index: 5; }
-    .level:nth-child(2) { background: #2ecc71; z-index: 4; }
-    .level:nth-child(3) { background: #f1c40f; z-index: 3; }
-    .level:nth-child(4) { background: #f39c12; z-index: 2; }
-    .level:nth-child(5) { background: #e74c3c; z-index: 1; }
+    .level:nth-child(1) { background: #7B2C98; z-index: 5; }
+    .level:nth-child(2) { background: #5E3EB2; z-index: 4; }
+    .level:nth-child(3) { background: #434DC9; z-index: 3; }
+    .level:nth-child(4) { background: #2D63EE; z-index: 2; }
+    .level:nth-child(5) { background: #24A0EF; z-index: 1; }
 
     .level p {
       margin: 0;
@@ -116,17 +115,17 @@
     }
 
     /* Colores laterales */
-    .level:nth-child(1)::before { background: #2980b9; }
-    .level:nth-child(2)::before { background: #27ae60; }
-    .level:nth-child(3)::before { background: #d4ac0d; }
-    .level:nth-child(4)::before { background: #d68910; }
-    .level:nth-child(5)::before { background: #c0392b; }
+    .level:nth-child(1)::before { background: #6B2685; }
+    .level:nth-child(2)::before { background: #51369A; }
+    .level:nth-child(3)::before { background: #3A43AF; }
+    .level:nth-child(4)::before { background: #2756D1; }
+    .level:nth-child(5)::before { background: #1F8CD2; }
 
-    .level:nth-child(1)::after { background: #5dade2; }
-    .level:nth-child(2)::after { background: #58d68d; }
-    .level:nth-child(3)::after { background: #f7dc6f; }
-    .level:nth-child(4)::after { background: #f8c471; }
-    .level:nth-child(5)::after { background: #ec7063; }
+    .level:nth-child(1)::after { background: #8B31AC; }
+    .level:nth-child(2)::after { background: #6B46CA; }
+    .level:nth-child(3)::after { background: #4C57E3; }
+    .level:nth-child(4)::after { background: #3370FF; }
+    .level:nth-child(5)::after { background: #29B4FF; }
 
     .level:hover {
       transform: translateX(-20px) translateY(-10px) scale(1.05);
@@ -134,18 +133,18 @@
     }
 
     .level:hover p {
-      color: #2c3e50;
+      color: white;
       font-size: 19px;
     }
 
     @keyframes slideIn {
       from {
         opacity: 0;
-        transform: translateY(50px) rotateX(15deg) rotateY(-10deg);
+        transform: translateY(50px) rotateX(0deg) rotateY(0deg);
       }
       to {
         opacity: 1;
-        transform: translateY(0) rotateX(15deg) rotateY(-10deg);
+        transform: translateY(0) rotateX(0deg) rotateY(0deg);
       }
     }
 
@@ -161,68 +160,90 @@
     .text-container {
       flex: 1;
       max-width: 40%;
+      color: #FFFFFF;
       padding-right: 20px;
-      margin-right: 0;
-      order: 1;
-      margin-left: 8%;
+      margin-left: 0;
     }
 
     .subtitle {
-      font-family: 'AA Smart Sans';
+      color: #FFF;
+      font-feature-settings: 'liga' off, 'clig' off;
+      font-family: "AA Smart Sans";
+      font-size: 21.292px;
+      font-style: normal;
       font-weight: 300;
-      font-size: 21.29px;
-      line-height: 100%;
-      letter-spacing: 0px;
+      line-height: normal;
       margin-bottom: 20px;
-      color: #031795;
+      max-width: 60%;
     }
 
     .main-title {
-      font-family: 'AA Smart Sans';
-      font-weight: 300;
+      color: #FFF;
+      font-feature-settings: 'liga' off, 'clig' off;
+      font-family: "AA Smart Sans";
       font-size: 50px;
-      line-height: 100%;
-      letter-spacing: 0px;
-      margin-bottom: 30px;
-      color: #031795;
-    }
-
-    .content-text {
-      font-family: 'AA Smart Sans';
+      font-style: normal;
       font-weight: 300;
-      font-size: 25px;
-      line-height: 100%;
-      letter-spacing: 0px;
-      text-align: justify;
-      color: #777A7F;
-      margin-bottom: 20px;
+      line-height: normal;
+      margin-bottom: 30px;
     }
 
     .section-title {
-      font-family: 'AA Smart Sans';
-      font-weight: 700;
-      font-size: 25px;
-      line-height: 100%;
-      letter-spacing: 0px;
+      color: #FFF;
       text-align: justify;
+      font-feature-settings: 'liga' off, 'clig' off;
+      font-family: "AA Smart Sans";
+      font-size: 25px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
       margin-bottom: 20px;
     }
 
-    .content-list {
-      font-family: 'AA Smart Sans';
-      font-weight: 300;
-      font-size: 25px;
-      line-height: 100%;
-      letter-spacing: 0px;
+    .rules-title {
+      color: #FFF;
       text-align: justify;
-      list-style: none;
-      padding-left: 0;
-      color: #777A7F;
+      font-feature-settings: 'liga' off, 'clig' off;
+      font-family: "AA Smart Sans";
+      font-size: 25px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+      margin-bottom: 20px;
+      max-width: 80%;
+    }
+
+    .content-list {
+      list-style: disc;
+      padding-left: 25px;
+      color: #FFF;
+      max-width: 70%;
     }
 
     .content-list li {
+      color: #FFF;
+      text-align: justify;
+      font-feature-settings: 'liga' off, 'clig' off;
+      font-family: "AA Smart Sans";
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 300;
+      line-height: 160%;
       margin-bottom: 15px;
-      position: relative;
+      padding-left: 10px;
+    }
+
+    .content-text {
+      color: #FFF;
+      text-align: justify;
+      font-feature-settings: 'liga' off, 'clig' off;
+      font-family: "AA Smart Sans";
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 300;
+      line-height: 160%;
+      margin-bottom: 20px;
+      max-width: 85%;
     }
 
     @media (max-width: 1366px) {
@@ -231,12 +252,8 @@
       }
       
       .pyramid-container {
-        margin-right: 6%;
-        margin-left: 4%;
-      }
-
-      .text-container {
         margin-left: 6%;
+        margin-right: 4%;
       }
 
       .main-title {
@@ -245,7 +262,7 @@
 
       .section-title,
       .content-list {
-        font-size: 22px;
+        font-size: 20px;
       }
 
       .level:nth-child(1) { width: 500px; }
@@ -265,12 +282,8 @@
 
     @media (max-width: 1024px) {
       .pyramid-container {
-        margin-right: 4%;
-        margin-left: 3%;
-      }
-
-      .text-container {
         margin-left: 4%;
+        margin-right: 3%;
       }
 
       .main-title {
@@ -290,24 +303,12 @@
       .level p {
         font-size: 18px;
       }
-
-      .content-list {
-        font-size: 20px;
-      }
     }
   </style>
 </head>
 <body>
-  <img src="../assets/images/logo_color.png" alt="Logo" class="logo">
-  <div class="text-container">
-    <p class="subtitle">Seguridad en tareas de mantenimiento</p>
-    <h2 class="main-title">1.5. Prácticas de mantenimiento para control del riesgo</h2>
-    <p class="content-text">Tenemos que enfocarnos en prevenir accidentes y problemas que puedan surgir durante las tareas de mantenimiento, asegurando la seguridad de los trabajadores y el buen funcionamiento de los equipos.</p>
-    <p class="content-text">Esto se logra mediante la identificación, evaluación y mitigación de riesgos, la implementación de medidas de seguridad y la capacitación del personal.</p>
-  </div>
-
+  <img src="../assets/images/logo_blanco.png" alt="Logo" class="logo">
   <div class="pyramid-container">
-    <h1 class="title">Jerarquía de Controles de Seguridad</h1>
     <ul class="pyramid">
       <li class="level"><p>Eliminación</p></li>
       <li class="level"><p>Sustitución</p></li>
@@ -315,6 +316,13 @@
       <li class="level"><p>Controles administrativos</p></li>
       <li class="level"><p>PPE</p></li>
     </ul>
+  </div>
+
+  <div class="text-container">
+    <p class="subtitle">Seguridad en tareas de mantenimiento</p>
+    <h2 class="main-title">1.5. Prácticas de mantenimiento para control del riesgo</h2>
+    <p class="content-text">Tenemos que enfocarnos en prevenir accidentes y problemas que puedan surgir durante las tareas de mantenimiento, asegurando la seguridad de los trabajadores y el buen funcionamiento de los equipos.</p>
+    <p class="content-text">Esto se logra mediante la identificación, evaluación y mitigación de riesgos, la implementación de medidas de seguridad y la capacitación del personal.</p>
   </div>
 </body>
 </html>

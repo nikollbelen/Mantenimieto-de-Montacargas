@@ -1,0 +1,61 @@
+.gradient-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 300px;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.gradient-container-bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 300px;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.gradient-background {
+    position: absolute;
+    width: 2009.2px;
+    height: 248.06px;
+    top: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(90deg, #FCFCFC 1.35%, #90E1F9 22.69%, #6B8BDE 51.32%, #E98993 76.99%, #FCFCFC 97.73%);
+    backdrop-filter: blur(150px);
+    z-index: 0;
+    border-radius: 50%;
+    opacity: 0.7;
+    filter: blur(70px);
+}
+
+.gradient-background-bottom {
+    position: absolute;
+    width: 2009.2px;
+    height: 248.06px;
+    bottom: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(90deg, #FCFCFC 2.27%, #E98993 23.01%, #6B8BDE 48.68%, #90E1F9 77.31%, #FCFCFC 98.65%);
+    backdrop-filter: blur(150px);
+    z-index: 0;
+    border-radius: 50%;
+    opacity: 0.7;
+    filter: blur(70px);
+}
+
+@media (max-width: 1200px) {
+    .gradient-background, .gradient-background-bottom {
+        width: 150%;
+    }
+}
+
+@media (max-width: 768px) {
+    .gradient-background, .gradient-background-bottom {
+        width: 200%;
+    }
+} 
