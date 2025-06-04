@@ -12,33 +12,14 @@ document.addEventListener('DOMContentLoaded', function() {
     const audioData = [
         {
             title: "Seguridad en tareas de mantenimiento",
-            audio: "../assets/audio/objetivo.wav",
+            audio: "../assets/audio/pagina11.wav",
             transcript: "Aplicar procedimientos de seguridad industrial y prácticas preventivas para minimizar los riesgos durante las tareas de mantenimiento del montacargas, de acuerdo con los lineamientos de Anglo American Quellaveco y normativas vigentes"
-        },
-        {
-            title: "Introducción de Doble Efecto (1960)",
-            audio: "../assets/audio/actuador-1960.mp3",
-            transcript: "La década de 1960 trajo consigo una innovación significativa: los cilindros de doble efecto. Esta tecnología permitió el control preciso del movimiento en ambas direcciones, expandiendo significativamente las aplicaciones en la industria y mejorando la eficiencia de los procesos automatizados."
-        },
-        {
-            title: "Mejoras en Amortiguación (1970)",
-            audio: "../assets/audio/actuador-1970.mp3",
-            transcript: "Durante los años 70, el foco estuvo en la implementación de sistemas de amortiguación en los extremos de los cilindros. Esta mejora fue crucial para reducir el impacto y aumentar la vida útil de los componentes, resultando en operaciones más suaves y confiables."
-        },
-        {
-            title: "Actuadores Especializados (1980)",
-            audio: "../assets/audio/actuador-1980.mp3",
-            transcript: "Los años 80 fueron testigos del desarrollo de actuadores altamente especializados. La introducción de variantes como los actuadores de doble vástago y multiposición permitió abordar necesidades específicas de la industria, aumentando la versatilidad de los sistemas neumáticos."
-        },
-        {
-            title: "Integración Electrónica (1990)",
-            audio: "../assets/audio/actuador-1990.mp3",
-            transcript: "La década de 1990 marcó un punto de inflexión con la incorporación de sensores y controles electrónicos. Esta integración permitió una mayor precisión en el control del movimiento y facilitó el monitoreo en tiempo real del funcionamiento de los actuadores."
         }
     ];
 
     let currentTrack = 0;
     let isPlaying = false;
+    let hasPlayedOnce = false;
 
     // Inicializar WaveSurfer
     const wavesurfer = WaveSurfer.create({
@@ -119,6 +100,14 @@ document.addEventListener('DOMContentLoaded', function() {
     wavesurfer.on('ready', () => {
         wavesurfer.setVolume(volumeSlider.value / 100);
         timeDisplay.textContent = `00:00 / ${formatTime(wavesurfer.getDuration())}`;
+        
+        // Reproducir automáticamente solo la primera vez que se carga
+        if (!hasPlayedOnce) {
+            wavesurfer.play();
+            isPlaying = true;
+            updatePlayButton();
+            hasPlayedOnce = true;
+        }
     });
 
     wavesurfer.on('audioprocess', () => {
@@ -130,16 +119,6 @@ document.addEventListener('DOMContentLoaded', function() {
     wavesurfer.on('finish', () => {
         isPlaying = false;
         updatePlayButton();
-        
-        // Reproducir siguiente pista automáticamente si existe
-        if (currentTrack < audioData.length - 1) {
-            loadTrack(currentTrack + 1);
-            setTimeout(() => {
-                wavesurfer.play();
-                isPlaying = true;
-                updatePlayButton();
-            }, 1000);
-        }
     });
 
     // Error handling

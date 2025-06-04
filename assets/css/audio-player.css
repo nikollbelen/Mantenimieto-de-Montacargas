@@ -82,6 +82,7 @@ body {
     align-items: center;
     justify-content: center;
     transition: all 0.3s ease;
+    box-shadow: var(--shadow);
 }
 
 .control-btn:hover {
@@ -108,7 +109,7 @@ body {
     width: 100px;
     height: 4px;
     -webkit-appearance: none;
-    background: var(--text-disabled);
+    background: #031795;
     border-radius: 2px;
     outline: none;
 }
