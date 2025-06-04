@@ -111,10 +111,10 @@
 
         .floor-button {
             position: absolute;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #243f90 0%, #7495d3 100%);
+            width: 7vh;
+            height: 7vh;
+            border-radius: 1vh;
+            background: linear-gradient(135deg, #6b3fa0 0%, #4287f5 100%);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -122,16 +122,28 @@
             pointer-events: all;
             cursor: pointer;
             transition: transform 0.3s ease;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .floor-button::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 100%);
+            border-radius: 24px;
+            z-index: -1;
         }
 
         .floor-button:hover {
-            transform: scale(1.1);
+            transform: scale(1.05);
         }
 
         .floor-button img {
-            width: 30px;
-            height: 30px;
-            filter: brightness(0) invert(1);
+            width: 40px;
+            height: 40px;
         }
 
         /* Posicionamiento de los botones */
@@ -153,6 +165,19 @@
         .button-front-right {
             right: 30%;
             bottom: 20%;
+        }
+
+        /* Texto debajo de los botones */
+        .floor-button::after {
+            content: attr(data-size);
+            position: absolute;
+            bottom: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #4287f5;
+            font-size: 12px;
+            white-space: nowrap;
+            text-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
         }
     </style>
 </head>
@@ -235,10 +260,10 @@
                         </div>
                     </model-viewer>
                     <div class="floor-buttons">
-                        <button class="floor-button button-left">
+                        <button class="floor-button button-left" >
                             <img src="../assets/images/icons/manual.png" alt="Manual">
                         </button>
-                        <button class="floor-button button-front-left">
+                        <button class="floor-button button-front-left" >
                             <img src="../assets/images/icons/codigo_game.png" alt="Código">
                         </button>
                         <button class="floor-button button-front-right">
