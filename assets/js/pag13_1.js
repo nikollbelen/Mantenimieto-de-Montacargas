@@ -6,8 +6,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const nextBtn = document.getElementById('nextBtn');
     
     let currentPage = 0;
-    const cardsPerPage = getCardsPerPage();
-    const totalPages = Math.ceil(cards.length / cardsPerPage);
+    let cardsPerPage = getCardsPerPage();
+    let totalPages = Math.ceil(cards.length / cardsPerPage);
     
     function getCardsPerPage() {
         if (window.innerWidth <= 768) return 1;
@@ -15,23 +15,54 @@ document.addEventListener('DOMContentLoaded', () => {
         return 4;
     }
     
-    // Create dots dynamically
-    dotsContainer.innerHTML = '';
-    for (let i = 0; i < totalPages; i++) {
-        const dot = document.createElement('span');
-        dot.classList.add('dot');
-        if (i === 0) dot.classList.add('active');
-        dot.addEventListener('click', () => {
-            currentPage = i;
-            updateCarousel();
-        });
-        dotsContainer.appendChild(dot);
+    function updateDots() {
+        // Limpiar dots existentes
+        dotsContainer.innerHTML = '';
+        // Crear nuevos dots basados en el total de páginas actual
+        for (let i = 0; i < totalPages; i++) {
+            const dot = document.createElement('span');
+            dot.classList.add('dot');
+            if (i === currentPage) dot.classList.add('active');
+            dot.addEventListener('click', () => {
+                currentPage = i;
+                updateCarousel();
+            });
+            dotsContainer.appendChild(dot);
+        }
     }
     
-    const dots = document.querySelectorAll('.dot');
-    
-    // Initialize
-    updateCarousel();
+    function updateCarousel() {
+        // Asegurar que currentPage es válido con el nuevo totalPages
+        currentPage = Math.min(currentPage, totalPages - 1);
+        
+        // Show/hide cards based on current page
+        cards.forEach((card, index) => {
+            const startIdx = currentPage * cardsPerPage;
+            const endIdx = startIdx + cardsPerPage;
+            
+            if (index >= startIdx && index < endIdx) {
+                card.style.display = 'flex';
+                card.style.opacity = '1';
+                card.style.visibility = 'visible';
+            } else {
+                card.style.display = 'none';
+                card.style.opacity = '0';
+                card.style.visibility = 'hidden';
+            }
+        });
+        
+        // Update dots
+        const dots = document.querySelectorAll('.dot');
+        dots.forEach((dot, index) => {
+            dot.classList.toggle('active', index === currentPage);
+        });
+        
+        // Update buttons
+        prevBtn.style.opacity = currentPage === 0 ? '0.5' : '1';
+        nextBtn.style.opacity = currentPage === totalPages - 1 ? '0.5' : '1';
+        prevBtn.style.cursor = currentPage === 0 ? 'not-allowed' : 'pointer';
+        nextBtn.style.cursor = currentPage === totalPages - 1 ? 'not-allowed' : 'pointer';
+    }
     
     // Navigation buttons
     prevBtn.addEventListener('click', () => {
@@ -47,33 +78,6 @@ document.addEventListener('DOMContentLoaded', () => {
             updateCarousel();
         }
     });
-    
-    function updateCarousel() {
-        // Show/hide cards based on current page
-        cards.forEach((card, index) => {
-            const startIdx = currentPage * cardsPerPage;
-            const endIdx = startIdx + cardsPerPage;
-            
-            if (index >= startIdx && index < endIdx) {
-                card.style.display = 'flex';
-                card.style.opacity = '1';
-            } else {
-                card.style.display = 'none';
-                card.style.opacity = '0';
-            }
-        });
-        
-        // Update dots
-        dots.forEach((dot, index) => {
-            dot.classList.toggle('active', index === currentPage);
-        });
-        
-        // Update buttons
-        prevBtn.style.opacity = currentPage === 0 ? '0.5' : '1';
-        nextBtn.style.opacity = currentPage === totalPages - 1 ? '0.5' : '1';
-        prevBtn.style.cursor = currentPage === 0 ? 'not-allowed' : 'pointer';
-        nextBtn.style.cursor = currentPage === totalPages - 1 ? 'not-allowed' : 'pointer';
-    }
     
     // Add touch support for mobile
     let touchStartX = 0;
@@ -122,8 +126,23 @@ document.addEventListener('DOMContentLoaded', () => {
         resizeTimer = setTimeout(() => {
             const newCardsPerPage = getCardsPerPage();
             if (newCardsPerPage !== cardsPerPage) {
-                location.reload();
+                cardsPerPage = newCardsPerPage;
+                totalPages = Math.ceil(cards.length / cardsPerPage);
+                updateDots();
+                updateCarousel();
             }
         }, 250);
     });
+
+    // Inicialización
+    // Ocultar todas las cards inicialmente
+    cards.forEach(card => {
+        card.style.display = 'none';
+        card.style.opacity = '0';
+        card.style.visibility = 'hidden';
+    });
+    
+    // Inicializar dots y carrusel
+    updateDots();
+    updateCarousel();
 }); 
