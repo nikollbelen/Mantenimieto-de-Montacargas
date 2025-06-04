@@ -84,6 +84,25 @@
     font-style: normal;
 }
 
+/* Preload fonts */
+@font-face {
+    font-family: 'AA Smart Sans';
+    src: local('AA Smart Sans Regular'),
+         url('../fonts/AASMARTSANS-REGULAR.TTF') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'AA Smart Sans';
+    src: local('AA Smart Sans Bold'),
+         url('../fonts/AASMARTSANS-BOLD.TTF') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
 :root {
     /* Variables de color */
     --primary-color: #49488A;
@@ -92,6 +111,11 @@
     --success-color: #4CAF50;
     --warning-color: #FF9800;
     --error-color: #F44336;
+    --confipetrol-azul: #004b87;
+    --confipetrol-naranja: #FF6B00;
+    --confipetrol-naranja-claro: #FF8533;
+    --confipetrol-gris: #E3E3E3;
+    --confipetrol-degradado-azul: linear-gradient(115deg, var(--confipetrol-azul), #366FA9 60%);
 
      /* Variables de bordes */
     --border-style:1px solid#366FA9;
