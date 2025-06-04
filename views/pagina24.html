@@ -71,6 +71,59 @@
       z-index: 2;
     }
 
+    .right-block {
+      position: absolute;
+      right: 4%;
+      top: 35%;
+      transform: translateY(-50%);
+      width: 280px;
+      height: 35vh;
+      border-radius: 20px;
+      border: 2px solid var(--GRADIENT, #62B6DA);
+      background: transparent;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .right-block img {
+      width: 80px;
+      height: auto;
+      margin-bottom: 20px;
+      filter: brightness(0) invert(1);
+    }
+
+    .right-block .text-bold {
+      color: #FFF;
+      text-align: center;
+      font-family: "AA Smart Sans";
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+      margin-bottom: 10px;
+    }
+
+    .right-block .text-regular {
+      color: #FFF;
+      text-align: center;
+      font-family: "AA Smart Sans";
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 300;
+      line-height: normal;
+    }
+
+    .title-container {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      width: 100%;
+      gap: 15px;
+    }
+
     .title {
       flex: 1 0 0;
       color: #031795;
@@ -80,10 +133,17 @@
       font-style: normal;
       font-weight: 300;
       line-height: normal;
+      margin: 0;
+    }
+
+    .title-icon {
+      width: 28px;
+      height: 29px;
+      object-fit: contain;
     }
 
     .capacity-image {
-      width: 80%;
+      width: 100%;
       height: auto;
       border-radius: 20px;
       background: #FFF;
@@ -107,6 +167,30 @@
       font-weight: 300;
       line-height: normal;
     }
+
+    @media (max-width: 768px) {
+      .content-block {
+        width: 90%;
+        padding: 30px;
+        gap: 30px;
+      }
+
+      .right-block {
+        display: none;
+      }
+
+      .capacity-image {
+        width: 100%;
+      }
+
+      .title {
+        font-size: 24px;
+      }
+
+      .description {
+        font-size: 14px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -115,11 +199,19 @@
   </div>
   <img src="../assets/images/logo_blanco.png" alt="Logo" class="logo">
   <div class="content-block">
-    <h1 class="title">Etiqueta de capacidad</h1>
+    <div class="title-container">
+      <h1 class="title">Etiqueta de capacidad</h1>
+      <img src="../assets/images/icons/codigo_game.png" alt="Código Game" class="title-icon">
+    </div>
     <div class="capacity-image">
       <img src="../assets/images/etiqueta_capacidad.png" alt="Etiqueta de capacidad">
     </div>
     <p class="description">Antes de intentar recoger o elevar una carga, asegúrese de que su peso se encuentre dentro de la capacidad del montacargas en el centro de la carga considerada.</p>
+  </div>
+  <div class="right-block">
+    <img src="../assets/images/alerta.png" alt="Alerta">
+    <p class="text-bold">Si la carga no es uniforme,</p>
+    <p class="text-regular">la porción más pesada se debe colocar más próxima al soporte de elevación y centrada sobre las horquillas.</p>
   </div>
 </body>
 </html>
