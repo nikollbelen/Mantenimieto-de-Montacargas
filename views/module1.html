@@ -6,6 +6,7 @@
     <title>Módulo 1 - Introducción a la Seguridad</title>
     <link rel="stylesheet" href="../assets/css/variables.css">
     <link rel="stylesheet" href="../assets/css/modules.css">
+    <script src="../js/SCORM.js"></script>
 </head>
 <body>
     <div class="header">
@@ -16,47 +17,77 @@
             <h1>Módulo 1: Introducción a la Seguridad</h1>
             <div class="content-section">
                 <div class="topics-grid">
-                    <a href="pagina11.html" class="topic-card">
+                    <a href="javascript:void(0)" onclick="navegarYActualizar('pagina11.html')" class="topic-card">
                         <div class="topic-number">1.1</div>
                         <h3>Objetivo</h3>
                     </a>
-                    <a href="pagina12.html" class="topic-card">
+                    <a href="javascript:void(0)" onclick="navegarYActualizar('pagina12.html')" class="topic-card">
                         <div class="topic-number">1.2</div>
                         <h3>Sistema de seguridad integrado</h3>
                     </a>
-                    <a href="pagina13.html" class="topic-card">
+                    <a href="javascript:void(0)" onclick="navegarYActualizar('pagina13.html')" class="topic-card">
                         <div class="topic-number">1.3</div>
                         <h3>Reglas de oro que protegen la vida</h3>
                     </a>
-                    <a href="pagina14.html" class="topic-card">
+                    <a href="javascript:void(0)" onclick="navegarYActualizar('pagina14.html')" class="topic-card">
                         <div class="topic-number">1.4</div>
                         <h3>Análisis de trabajo seguro (ATS)</h3>
                     </a>
-                    <a href="pagina15.html" class="topic-card">
+                    <a href="javascript:void(0)" onclick="navegarYActualizar('pagina15.html')" class="topic-card">
                         <div class="topic-number">1.5</div>
                         <h3>Practicas de mantenimiento para control del riesgo</h3>
                     </a>
-                    <a href="pagina16.html" class="topic-card">
+                    <a href="javascript:void(0)" onclick="navegarYActualizar('pagina16.html')" class="topic-card">
                         <div class="topic-number">1.6</div>
                         <h3>Condiciones del área de trabajo</h3>
                     </a>
-                    <a href="pagina17.html" class="topic-card">
+                    <a href="javascript:void(0)" onclick="navegarYActualizar('pagina17.html')" class="topic-card">
                         <div class="topic-number">1.7</div>
                         <h3>Equipo de protección personal (EPP)</h3>
                     </a>
-                    <a href="pagina18.html" class="topic-card">
+                    <a href="javascript:void(0)" onclick="navegarYActualizar('pagina18.html')" class="topic-card">
                         <div class="topic-number">1.8</div>
                         <h3>Elementos de seguridad en la máquina</h3>
                     </a>
                 </div>
             </div>
             <div class="start-section">
-                <a href="pagina11.html" class="btn-start">
+                <a href="javascript:void(0)" onclick="navegarYActualizar('pagina11.html')" class="btn-start">
                     Comenzemos
                     <span class="arrow-right">→</span>
                 </a>
             </div>
         </div>
     </div>
+
+    <script>
+        // Función para navegar y actualizar el progreso
+        async function navegarYActualizar(pagina) {
+            try {
+                // Verificar si la página existe
+                const response = await fetch(pagina);
+                if (!response.ok) {
+                    throw new Error('Página no encontrada');
+                }
+                
+                // Actualizar el progreso solo si la página existe
+                if (window.parent.ScormManager) {
+                    window.parent.ScormManager.guardarProgreso(pagina);
+                }
+                // Navegar a la página
+                window.location.href = pagina;
+            } catch (error) {
+                // Si la página no existe, redirigir a error404.html
+                window.location.href = 'error404.html';
+            }
+        }
+
+        // Inicializar SCORM cuando la página cargue
+        document.addEventListener('DOMContentLoaded', function() {
+            if (window.parent.ScormManager) {
+                window.parent.ScormManager.guardarProgreso('module1.html');
+            }
+        });
+    </script>
 </body>
 </html> 

@@ -70,6 +70,20 @@
     font-style: italic;
 }
 
+@font-face {
+    font-family: 'Smart Sans';
+    src: url('../fonts/AASMARTSANS-REGULAR.TTF') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Smart Sans';
+    src: url('../fonts/AASMARTSANS-BOLD.TTF') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
 :root {
     /* Variables de color */
     --primary-color: #49488A;
@@ -129,4 +143,10 @@
 
     /* Fuente principal */
     --font-family: 'AA Smart Sans', Arial, sans-serif;
+
+    --font-family-primary: 'Smart Sans', sans-serif;
+    --color-primary: #004b87;
+    --color-secondary: #e3e3e3;
+    --color-text: #333333;
+    --color-background: #ffffff;
 } 

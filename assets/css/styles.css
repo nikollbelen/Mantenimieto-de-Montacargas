@@ -5,9 +5,10 @@
 }
 
 body {
-    font-family: var(--font-family);
+    font-family: var(--font-family-primary);
     overflow-x: hidden;
-    background-color: rgba(0, 0, 0, 0.4); /* Fondo oscuro base */
+    background-color: var(--color-background);
+    color: var(--color-text);
 }
 
 .logo {
