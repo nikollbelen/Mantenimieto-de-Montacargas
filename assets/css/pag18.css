@@ -1,3 +1,24 @@
+@font-face {
+    font-family: 'AA Smart Sans';
+    src: url('../fonts/AASMARTSANS-BOLD.TTF') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'AA Smart Sans';
+    src: url('../fonts/AASMARTSANS-REGULAR.TTF') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
 /* Estilos base */
 body {
     margin: 0;
