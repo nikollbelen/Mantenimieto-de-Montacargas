@@ -75,7 +75,7 @@ img {
 
     position: fixed;
     right: 0px;
-    top: 0;
+    bottom: 0;
     min-width: 5em;
     min-height: 3em;
 
