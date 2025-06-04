@@ -4,27 +4,34 @@ body {
     padding: 0;
     font-family: 'AA Smart Sans', sans-serif;
     background: #002D86;
-    min-height: 100vh;
+    height: 100vh;
     color: white;
+    /* overflow-y: scroll; */
 }
 
 .page-container {
-    max-width: 1400px;
+    max-width: 90vw;
     margin: 0 auto;
-    padding: 2rem;
+    padding: 1rem;
     position: relative;
+    /* height: 100vh; */
+    display: flex;
+    flex-direction: column;
 }
 
 .logo {
     position: absolute;
-    top: 2rem;
-    left: 2rem;
-    width: 180px;
+    top: 1rem;
+    left: 1rem;
+    width: 150px;
     height: auto;
 }
 
 .content {
-    padding-top: 100px;
+    padding-top: 60px;
+    height: calc(100% - 60px);
+    display: flex;
+    flex-direction: column;
 }
 
 /* Estilos de las tarjetas */
@@ -32,11 +39,11 @@ body {
     background: rgba(255, 255, 255, 0.1);
     border: 2px solid rgba(255, 255, 255, 0.2);
     border-radius: 15px;
-    padding: 1.5rem;
-    margin: 1rem;
+    padding: 1rem;
+    /* margin: 0.5rem; */
     backdrop-filter: blur(10px);
     position: relative;
-    width: 400px;
+    width: 350px;
 }
 
 .card-content {
@@ -47,33 +54,35 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    margin-bottom: 1rem;
+    /* margin-bottom: 0.5rem; */
 }
 
 .card-header h3 {
     margin: 0;
-    font-size: 1.1rem;
+    font-size: 1rem;
     flex: 1;
     padding-right: 1rem;
 }
 
 .card-icon {
-    width: 30px;
-    height: 30px;
+    width: 25px;
+    height: 25px;
     object-fit: contain;
 }
 
 .info-card p {
     margin: 0;
-    font-size: 0.9rem;
-    line-height: 1.4;
+    font-size: 0.85rem;
+    line-height: 1.3;
 }
 
 /* Layout de las tarjetas */
 .cards-row {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
+    position: relative;
+    z-index: 1;
 }
 
 .middle-section {
@@ -81,12 +90,15 @@ body {
     justify-content: space-between;
     align-items: center;
     position: relative;
+    flex: 1;
 }
 
 .cards-column {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 1rem;
+    position: relative;
+    z-index: 1;
 }
 
 /* Contenido central */
@@ -96,8 +108,9 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0 2rem;
-    height: 500px;
+    margin: 0 1rem;
+    height: 450px;
+    z-index: 1;
 }
 
 .forklift-model {
@@ -143,8 +156,8 @@ body {
 
 .circle-icon {
     position: absolute;
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     background: #002D86;
     border: 2px solid white;
@@ -155,8 +168,8 @@ body {
 
 .circle-icon::before {
     content: '';
-    width: 30px;
-    height: 30px;
+    width: 25px;
+    height: 25px;
     background-image: url('../images/icons/manual.png');
     background-size: contain;
     background-repeat: no-repeat;
@@ -186,31 +199,108 @@ body {
     transform: rotate(180deg);
 }
 
-/* Efectos visuales */
+/* Efectos visuales - Conectores */
+.info-card {
+    position: relative;
+}
+
 .info-card::after {
     content: '';
     position: absolute;
-    top: 50%;
-    width: 50px;
+    background: linear-gradient(90deg, rgba(36, 63, 144, 0.8) 0%, rgba(255, 255, 255, 0.5) 100%);
     height: 2px;
-    background: rgba(255, 255, 255, 0.2);
+    z-index: -1;
+}
+
+/* Conectores superiores */
+.cards-row .info-card::after {
+    width: 200px;
+    bottom: -50px;
+    left: 50%;
+    transform-origin: left center;
+}
+
+.cards-row .info-card.left::after {
+    transform: translateX(-50%) rotate(90deg);
+}
+
+.cards-row .info-card.right::after {
+    transform: translateX(-50%) rotate(90deg);
+}
+
+/* Conectores laterales */
+.cards-column .info-card::after {
+    top: 50%;
+    width: 150px;
 }
 
 .cards-column.left .info-card::after {
-    right: -50px;
+    right: -150px;
+    background: linear-gradient(90deg, rgba(36, 63, 144, 0.8) 0%, rgba(255, 255, 255, 0.5) 100%);
 }
 
 .cards-column.right .info-card::after {
-    left: -50px;
+    left: -150px;
+    background: linear-gradient(-90deg, rgba(36, 63, 144, 0.8) 0%, rgba(255, 255, 255, 0.5) 100%);
 }
 
-/* Círculos de fondo */
+/* Líneas de fondo */
+.middle-section {
+    position: relative;
+}
+
+.middle-section::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(
+            circle at center,
+            rgba(255, 255, 255, 0.1) 0%,
+            rgba(36, 63, 144, 0.05) 50%,
+            transparent 70%
+        );
+    z-index: -2;
+}
+
+/* Ajustes de posición para el modelo central */
+.center-content {
+    position: relative;
+    z-index: 1;
+}
+
+/* Eliminar estilos anteriores que no necesitamos */
+.cards-column .info-card::before {
+    display: none;
+}
+
+/* Ajuste de las tarjetas para los conectores */
+.cards-row {
+    position: relative;
+    z-index: 1;
+}
+
+.cards-column {
+    position: relative;
+    z-index: 1;
+}
+
+/* Líneas adicionales para el efecto de conexión */
 .center-content::before {
     content: '';
     position: absolute;
-    width: 600px;
-    height: 600px;
-    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+    width: 400px;
+    height: 400px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: 
+        radial-gradient(
+            circle at center,
+            rgba(255, 255, 255, 0.2) 0%,
+            transparent 70%
+        );
+    z-index: -1;
     border-radius: 50%;
-    z-index: 0;
 } 

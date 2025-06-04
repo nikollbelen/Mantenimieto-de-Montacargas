@@ -1,0 +1,145 @@
+{
+    "sections": [
+        {
+            "title": "Condiciones en el área de trabajo",
+            "conditions": [
+                "Las instalaciones de lavado de equipos deberá estar equipada con equipo de lavado de alto volumen.",
+                "Aplicar los procedimientos de lavado de todas las maquinas y componentes antes de que ingresen a la nave del taller."
+                
+            ],
+            "images": [
+                "../assets/images/18/1_1.png",
+                "../assets/images/18/1_2.png",
+                "../assets/images/18/1_3.png"
+            ]
+        },
+        {
+            "title": "Condiciones en el área de trabajo",
+            "conditions": [
+                "Las tuberías de suministro de aceite del taller están equipadas con filtro final y el aceite entregado cumple con el objetivo de limpieza.",
+                "Debe haber una plataforma de hormigón a la entrada del taller para evitar el ingreso de suciedad y lodo en el taller."
+                
+            ],
+            "images": [
+                "../assets/images/18/2_1.png"
+            ]
+        },
+        {
+            "title": "Condiciones en el área de trabajo",
+            "conditions": [
+                "Mantener el orden y limpieza en bancos de trabajo y en todas las áreas de taller, utilización de carro con Kit (completo)de tapones plásticos para la protección de los sistemas desarmados (nuevos o usados). Para accesibilidad del técnico se utiliza un muestrario de tapones que incluyen pin y diámetro."
+                
+                
+            ],
+            "images": [
+                "../assets/images/18/3_1.png",
+                "../assets/images/18/3_2.png"
+            ]
+        },
+        {
+            "title": "Condiciones en el área de trabajo",
+            "conditions": [
+                "Es importante mantener los componentes que operan en los equipos dentro de los códigos de limpieza, mantener lavadoras de limpieza en buenas condiciones y con solvente limpio así como los filtros instalados."
+                      
+            ],
+            "images": [
+                "../assets/images/18/4_1.png",
+                "../assets/images/18/4_2.png",
+                "../assets/images/18/4_3.png"
+            ]
+        },
+        {
+            "title": "Condiciones en el área de trabajo",
+            "conditions": [
+                "Orden y limpieza: el taller deberá estar bien cuidado, limpio y ordenado."
+                
+            ],
+            "images": [
+                "../assets/images/18/5_1.png",
+                "../assets/images/18/5_2.png"
+            ]
+        },
+        {
+            "title": "Condiciones en el área de trabajo",
+            "conditions": [
+                "Todas las mangueras (nuevas o reutilizadas) deben ser limpiadas por dentro y fuera." 
+            ],
+            "images": [
+                "../assets/images/18/6_1.png",
+                "../assets/images/18/6_2.png"
+            ]
+        },
+        {
+            "title": "Condiciones en el área de trabajo",
+            "conditions": [
+                "Los compartimientos de almacenamiento de piezas deberán estar limpios y bien organizados.",
+                "Cajas de los filtros y cerradas."
+                
+            ],
+            "images": [
+                "../assets/images/18/7_1.png",
+                "../assets/images/18/7_2.png"
+            ]
+        },
+        {
+            "title": "Condiciones en el área de trabajo",
+            "conditions": [
+                "Los acoplamientos se almacenan con ambos extremos tapados o se guardan en un andamio limpio y cerrado.",
+                "Las mangueras deberán almacenarse con tapas apropiadas para los extremos."
+                
+            ],
+            "images": [
+                "../assets/images/18/8_1.png",
+                "../assets/images/18/8_2.png"
+            ]
+        },
+        {
+            "title": "Condiciones en el área de trabajo",
+            "conditions": [
+                "Usar los filtros de capacidad alta para filtrar los fluidos que ingresan en los tanques.",
+                "Los cilindros de lubricantes se almacenan con tapas protectoras del cilindro, o los barriles se almacenan a dentro."
+                
+            ],
+            "images": [
+                "../assets/images/18/9_1.png",
+                "../assets/images/18/9_2.png"
+            ]
+        },
+        {
+            "title": "Condiciones en el área de trabajo",
+            "conditions": [
+                "Los inyectores se protegen con una tapa y se limpian antes del reabastecimiento.",
+                "Mangueras e inyectores de la tapa de llenado del camión de combustible limpios."
+                
+            ],
+            "images": [
+                "../assets/images/18/10_1.png",
+                "../assets/images/18/10_2.png"
+            ]
+        },
+        {
+            "title": "Condiciones en el área de trabajo",
+            "conditions": [
+                "Los carretes para mangueras están dentro de un comportamiento cerrado con puerta sellada, a los extremos de las mangueras tienen tapas.",
+                "Existe un programa de mantenimiento preventivo y se mantienen registros."
+                
+            ],
+            "images": [
+                "../assets/images/18/11_1.png",
+                "../assets/images/18/11_2.png"
+            ]
+        },
+        {
+            "title": "Condiciones en el área de trabajo",
+            "conditions": [
+                "Durante el desarme del componente todas las cavidades expuestas de la maquina son protegidas con tapones.",
+                "Insumos con paños absorbentes, plásticos protector, capetas contenedoras, articulo de aseo, tapas, tapones están disponibles."
+                
+            ],
+            "images": [
+                "../assets/images/18/12_1.png",
+                "../assets/images/18/12_2.png"
+            ]
+        }
+    ]
+} 
