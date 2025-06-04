@@ -116,20 +116,25 @@
     --confipetrol-naranja-claro: #FF8533;
     --confipetrol-gris: #E3E3E3;
     --confipetrol-degradado-azul: linear-gradient(115deg, var(--confipetrol-azul), #366FA9 60%);
+    --White: #FFF;
+    --gradient-dark: #030303;
 
-     /* Variables de bordes */
-    --border-style:1px solid#366FA9;
-    
+    /* Variables de bordes */
+    --border-style: 1px solid #366FA9;
     
     /* Variables de fondo */
     --background-gradient-1: linear-gradient(288deg, #62B6DA 7.1%, #366FA9 35.48%, #49488A 64.7%, #9F2B6A 93.92%);
     --background-gradient-2: white;
     --background-color: rgba(255, 255, 255, 0.1);
+    --gradient-overlay: linear-gradient(90deg, var(--gradient-dark) 5%, rgba(0, 0, 0, 0.00) 45%);
     
     /* Variables de texto */
     --text-primary: #031795;
     --text-secondary: #031795;
     --text-disabled: rgba(255, 255, 255, 0.6);
+    --font-size-welcome: 45px;
+    --font-size-title: 75px;
+    --line-height-welcome: 56px;
     
     /* Variables de sombras */
     --shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25), 0px 4px 29.2px 3px rgba(3, 23, 149, 0.31);
@@ -146,12 +151,9 @@
     --border-radius-md: 15px;
     --border-radius-lg: 25px;
 
-
-
-    --shadow-card:8px 32px 0 rgba(31, 38, 135, 0.37);
-
     /* Variables de ancho y altura */
-    --width-card-info:60vh;
+    --width-card-info: 60vh;
+    --width-welcome-text: 750px;
     
     /* Variables de espaciado */
     --spacing-xs: 0.5rem;
@@ -167,7 +169,6 @@
 
     /* Fuente principal */
     --font-family: 'AA Smart Sans', Arial, sans-serif;
-
     --font-family-primary: 'Smart Sans', sans-serif;
     --color-primary: #004b87;
     --color-secondary: #e3e3e3;
