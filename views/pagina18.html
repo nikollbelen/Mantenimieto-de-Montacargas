@@ -7,6 +7,154 @@
     <link rel="stylesheet" href="../assets/css/fonts.css">
     <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.3.0/model-viewer.min.js"></script>
     <link rel="stylesheet" href="../assets/css/pag18.css">
+    <style>
+        .background-image {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .connecting-line {
+            position: absolute;
+            background-color: #ff0000;
+            z-index: -1;
+        }
+
+        /* Líneas superiores en L */
+        .line-top-left {
+            position: absolute;
+            right: -50%;
+            top: 50%;
+            width: 50%;
+            height: 150px;
+            border-right: 2px solid #7495d3;
+            border-top: 2px solid #7495d3;
+            /* background: linear-gradient(90deg, rgba(36, 63, 144, 0.8) 0%, rgba(255, 255, 255, 0.5) 100%); */
+        }
+
+        .line-top-right {
+            position: absolute;
+            left: -50%;
+            top: 50%;
+            width: 50%;
+            height: 150px;
+            border-left: 2px solid #7495d3;
+            border-top: 2px solid #7495d3;
+        }
+
+        /* Líneas del medio */
+        .line-middle-left-1 {
+            width: 150px;
+            height: 2px;
+            top: 35%;
+            right: -150px;
+            transform: rotate(-15deg);
+            /* background-color: #ff0000; */
+        }
+
+        .line-middle-left-2 {
+            width: 150px;
+            height: 2px;
+            top: 65%;
+            right: -150px;
+            transform: rotate(15deg);
+            /* background-color: #ff0000; */
+        }
+
+        .line-middle-right-1 {
+            width: 150px;
+            height: 2px;
+            top: 35%;
+            left: -150px;
+            transform: rotate(15deg);
+            /* background-color: #ff0000; */
+        }
+
+        .line-middle-right-2 {
+            width: 150px;
+            height: 2px;
+            top: 65%;
+            left: -150px;
+            transform: rotate(-15deg);
+            /* background-color: #ff0000; */
+        }
+
+        /* Contenedor para las líneas */
+        .card-content {
+            position: relative;
+        }
+
+        /* Ajuste del z-index para el modelo 3D */
+        .center-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Ajustes para las tarjetas */
+        .info-card {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Estilos para los botones circulares */
+        .floor-buttons {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+        }
+
+        .floor-button {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #243f90 0%, #7495d3 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            pointer-events: all;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .floor-button:hover {
+            transform: scale(1.1);
+        }
+
+        .floor-button img {
+            width: 30px;
+            height: 30px;
+            filter: brightness(0) invert(1);
+        }
+
+        /* Posicionamiento de los botones */
+        .button-left {
+            left: 15%;
+            bottom: 40%;
+        }
+
+        .button-right {
+            right: 15%;
+            bottom: 40%;
+        }
+
+        .button-front-left {
+            left: 30%;
+            bottom: 20%;
+        }
+
+        .button-front-right {
+            right: 30%;
+            bottom: 20%;
+        }
+    </style>
 </head>
 <body>
     <div class="page-container">
@@ -17,6 +165,7 @@
             <div class="cards-row top">
                 <div class="info-card left">
                     <div class="card-content">
+                        <div class="line-top-left"></div>
                         <div class="card-header">
                             <h3>Manual de operación y mantenimiento</h3>
                             <img src="../assets/images/icons/manual.png" alt="Manual Icon" class="card-icon">
@@ -26,6 +175,7 @@
                 </div>
                 <div class="info-card right">
                     <div class="card-content">
+                        <div class="line-top-right"></div>
                         <div class="card-header">
                             <h3>Uso adecuado de EPP</h3>
                             <img src="../assets/images/icons/manual.png" alt="Manual Icon" class="card-icon">
@@ -40,6 +190,7 @@
                 <div class="cards-column left">
                     <div class="info-card">
                         <div class="card-content">
+                            <div class="line-middle-left-1"></div>
                             <div class="card-header">
                                 <h3>No modificar la estructura original de la máquina</h3>
                                 <img src="../assets/images/icons/manual.png" alt="Manual Icon" class="card-icon">
@@ -49,6 +200,7 @@
                     </div>
                     <div class="info-card">
                         <div class="card-content">
+                            <div class="line-middle-left-2"></div>
                             <div class="card-header">
                                 <h3>Apague el interruptor de encendido antes de dar servicio</h3>
                                 <img src="../assets/images/icons/manual.png" alt="Manual Icon" class="card-icon">
@@ -60,7 +212,6 @@
 
                 <!-- Montacargas central y círculos -->
                 <div class="center-content">
-                    
                     <model-viewer 
                         id="forklift-model"
                         camera-controls 
@@ -83,11 +234,26 @@
                             <div class="update-bar"></div>
                         </div>
                     </model-viewer>
+                    <div class="floor-buttons">
+                        <button class="floor-button button-left">
+                            <img src="../assets/images/icons/manual.png" alt="Manual">
+                        </button>
+                        <button class="floor-button button-front-left">
+                            <img src="../assets/images/icons/codigo_game.png" alt="Código">
+                        </button>
+                        <button class="floor-button button-front-right">
+                            <img src="../assets/images/icons/archivo.png" alt="Archivo">
+                        </button>
+                        <button class="floor-button button-right">
+                            <img src="../assets/images/icons/manual.png" alt="Manual">
+                        </button>
+                    </div>
                 </div>
 
                 <div class="cards-column right">
                     <div class="info-card">
                         <div class="card-content">
+                            <div class="line-middle-right-1"></div>
                             <div class="card-header">
                                 <h3>¡Manténgase alejado de los puntos de pellizco!</h3>
                                 <img src="../assets/images/icons/manual.png" alt="Manual Icon" class="card-icon">
@@ -97,6 +263,7 @@
                     </div>
                     <div class="info-card">
                         <div class="card-content">
+                            <div class="line-middle-right-2"></div>
                             <div class="card-header">
                                 <h3>¡Tenga cuidado con el personal!</h3>
                                 <img src="../assets/images/icons/manual.png" alt="Manual Icon" class="card-icon">
@@ -108,6 +275,7 @@
             </div>
         </div>
     </div>
+    <img src="../assets/images/18/pagina_18_fondo.webp" alt="Fondo" class="background-image">
     <script src="../assets/js/pag18.js"></script>
     <script src="../assets/js/audioPlayer.js"></script>
 </body>

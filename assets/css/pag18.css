@@ -207,7 +207,7 @@ body {
 .info-card::after {
     content: '';
     position: absolute;
-    background: linear-gradient(90deg, rgba(36, 63, 144, 0.8) 0%, rgba(255, 255, 255, 0.5) 100%);
+    /* background: linear-gradient(90deg, rgba(36, 63, 144, 0.8) 0%, rgba(255, 255, 255, 0.5) 100%); */
     height: 2px;
     z-index: -1;
 }
