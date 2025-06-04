@@ -121,7 +121,7 @@ function initializeMenu() {
 const style = document.createElement('style');
 style.textContent = `
     .menu-link.active {
-        background-color: var(--confipetrol-azul) !important;
+        background-color: #0062ff;
         color: white !important;
         font-weight: bold !important;
     }

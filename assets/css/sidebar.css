@@ -113,7 +113,7 @@ img {
     left: 4.8em;
     border-bottom-right-radius: 0.5em;
     transition: left 300ms ease-in-out, background 300ms ease-in-out, transform 300ms ease;
-    top: 0;
+    bottom: 0;
     min-width: 5em;
     min-height: 3em;
 
@@ -683,7 +683,7 @@ main p {
 /* COLOREAR DESPLEGABLES */
 
 #menu #desplegable.active {
-    background-color: var(--confipetrol-naranja-claro);
+    background-color: #0062ff;
 }
 
 #menu #desplegabledropdown-btn_2.active h3 {
