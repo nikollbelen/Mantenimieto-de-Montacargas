@@ -3,315 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IPER-C</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html, body {
-            height: 100%;
-            overflow: hidden;
-        }
-
-        body {
-            background-color: #FFFFFF;
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-            position: relative;
-        }
-
-        .gradient-container {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 300px;
-            overflow: hidden;
-            pointer-events: none;
-        }
-
-        .gradient-container-bottom {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 300px;
-            overflow: hidden;
-            pointer-events: none;
-        }
-
-        .gradient-background {
-            position: absolute;
-            width: 2009.2px;
-            height: 248.06px;
-            top: -100px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: linear-gradient(90deg, #FCFCFC 1.35%, #90E1F9 22.69%, #6B8BDE 51.32%, #E98993 76.99%, #FCFCFC 97.73%);
-            backdrop-filter: blur(150px);
-            z-index: 0;
-            border-radius: 50%;
-            opacity: 0.7;
-            filter: blur(70px);
-        }
-
-        .gradient-background-bottom {
-            position: absolute;
-            width: 2009.2px;
-            height: 248.06px;
-            bottom: -100px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: linear-gradient(90deg, #FCFCFC 2.27%, #E98993 23.01%, #6B8BDE 48.68%, #90E1F9 77.31%, #FCFCFC 98.65%);
-            backdrop-filter: blur(150px);
-            z-index: 0;
-            border-radius: 50%;
-            opacity: 0.7;
-            filter: blur(70px);
-        }
-
-        .logo {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            width: 150px;
-            z-index: 2;
-        }
-
-        .content-wrapper {
-            position: relative;
-            width: 100%;
-            max-width: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-top: -180px;
-            min-height: 500px;
-            z-index: 1;
-            padding: 0;
-        }
-
-        .text-container {
-            display: flex;
-            flex-direction: column;
-            gap: 25px;
-            max-width: 550px;
-            z-index: 1;
-            margin: 0 20px;
-            transform: translateY(-50px);
-        }
-
-        .side-content {
-            position: absolute;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 20px;
-            width: 200px;
-        }
-
-        .side-text {
-            font-family: 'AA Smart Sans', sans-serif;
-            font-weight: 400;
-            font-size: 25px;
-            line-height: 100%;
-            letter-spacing: 0;
-            text-align: center;
-            color: #031795;
-            max-width: 200px;
-            margin: 0;
-        }
-
-        .side-image {
-            width: 80px;
-            height: auto;
-        }
-
-        .left-content {
-            left: 0;
-            transform: translateY(0%);
-        }
-
-        .right-content {
-            right: 0;
-            transform: translateY(0%);
-        }
-
-        .bottom-content {
-            bottom: -140px;
-            left: 50%;
-            transform: translateX(-50%);
-            max-width: 400px;
-        }
-
-        .main-title {
-            font-family: 'AA Smart Sans', sans-serif;
-            font-weight: 200;
-            font-size: 40px;
-            line-height: 100%;
-            letter-spacing: 0px;
-            text-align: center;
-            color: #031795;
-            margin-bottom: 15px;
-        }
-
-        .subtitle {
-            font-family: 'AA Smart Sans', sans-serif;
-            font-weight: 700;
-            font-size: 20px;
-            line-height: 100%;
-            letter-spacing: 0px;
-            text-align: center;
-            color: #031795;
-        }
-
-        .description {
-            font-family: 'AA Smart Sans', sans-serif;
-            font-weight: 400;
-            font-size: 20px;
-            line-height: 100%;
-            letter-spacing: 0px;
-            text-align: center;
-            color: #031795;
-            max-width: 300px;
-            margin: 0 auto;
-        }
-
-        .background-shape {
-            position: absolute;
-            top: 40%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 900px;
-            height: 349px;
-            z-index: 1;
-        }
-
-        @media (max-height: 800px) {
-            .content-wrapper {
-                margin-top: -120px;
-                transform: scale(0.9);
-            }
-            .text-container {
-                transform: translateY(-30px);
-            }
-            .bottom-content {
-                bottom: -120px;
-            }
-        }
-
-        @media (max-width: 1200px) {
-            .gradient-background, .gradient-background-bottom {
-                width: 150%;
-            }
-            .left-content, .right-content {
-                transform: translateY(0%);
-            }
-            .left-content {
-                left: 0;
-                padding-left: 2px;
-            }
-            .right-content {
-                right: 0;
-                padding-right: 2px;
-            }
-            .side-text {
-                font-size: 22px;
-            }
-        }
-
-        @media (max-width: 992px) {
-            .content-wrapper {
-                transform: scale(0.85);
-            }
-            .main-title {
-                font-size: 35px;
-            }
-            .side-image {
-                width: 70px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .content-wrapper {
-                flex-direction: column;
-                gap: 30px;
-                transform: scale(0.8);
-            }
-            .side-content {
-                position: relative;
-                transform: none !important;
-                left: auto !important;
-                right: auto !important;
-                bottom: auto !important;
-            }
-            .left-content {
-                order: 1;
-            }
-            .text-container {
-                order: 2;
-            }
-            .right-content {
-                order: 3;
-            }
-            .bottom-content {
-                order: 4;
-            }
-            .main-title {
-                font-size: 30px;
-            }
-            .gradient-background, .gradient-background-bottom {
-                width: 200%;
-            }
-        }
-    </style>
+    <title>Seguridad en tareas de mantenimiento</title>
+    <link rel="stylesheet" href="../assets/css/fonts.css">
+    <link rel="stylesheet" href="../assets/css/pag15.css">
 </head>
 <body>
-    <div class="gradient-container">
-        <div class="gradient-background"></div>
-    </div>
-    <div class="gradient-container-bottom">
-        <div class="gradient-background-bottom"></div>
-    </div>
+    <div class="page-container">
+        <img src="../assets/images/logo_color.png" alt="AngloAmerican Logo" class="logo">
+        
+        <div class="content-section">
+            <div class="header-section">
+                <p class="subtitle">Seguridad en tareas de mantenimiento</p>
+                <h1 class="title">1.5. Practicas de mantenimiento para control del riesgo</h1>
+            </div>
 
-    <svg class="background-shape" xmlns="http://www.w3.org/2000/svg" width="1140" height="442" viewBox="0 0 1140 442" fill="none">
-        <path opacity="0.3" d="M6.0004 -3.75777e-05L5.99833 157.508C5.99817 169.322 12.9323 180.037 23.7103 184.876L291.139 304.95L557.037 432.294C565.231 436.218 574.76 436.218 582.954 432.294L848.852 304.95L1116.28 184.876C1127.06 180.037 1134 169.323 1134 157.509L1134 0" stroke="url(#paint0_linear_1321_57)" stroke-width="12"/>
-        <defs>
-            <linearGradient id="paint0_linear_1321_57" x1="1008.58" y1="219.974" x2="107.853" y2="219.974" gradientUnits="userSpaceOnUse">
-                <stop stop-color="#FF0000"/>
-                <stop offset="0.269231" stop-color="#7C2C97"/>
-                <stop offset="0.610577" stop-color="#2460E5"/>
-                <stop offset="1" stop-color="#24ADF1"/>
-            </linearGradient>
-        </defs>
-    </svg>
+            <div class="accordion-container">
+                <div class="accordion-item">
+                    <button class="accordion-button">
+                        <span class="button-text">Herramienta de gestión que identifica los pasos de la tarea, los peligros, aspectos ambientales, riesgos y las medidas de control.</span>
+                        <span class="plus-icon">+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <p>Contenido detallado sobre la herramienta de gestión...</p>
+                    </div>
+                </div>
 
-    <img src="../assets/images/logo_color.png" alt="Logo" class="logo">
-    <div class="content-wrapper">
-        <div class="side-content left-content">
-            <p class="side-text">Identificar los peligros</p>
-            <img src="../assets/images/alerta.png" alt="Alerta" class="side-image">
-        </div>
-        <div class="text-container">
-            <h1 class="main-title">IPER-C: Proceso sistemático que permite</h1>
-            <h2 class="subtitle">PROPÓSITO</h2>
-            <h2 class="subtitle">|</h2>
-            <p class="description">Reducir los riesgos a niveles establecidos según las normas vigentes.</p>
-        </div>
-        <div class="side-content right-content">
-            <p class="side-text">Implementar controles</p>
-            <img src="../assets/images/chekeo.png" alt="Chekeo" class="side-image">
-        </div>
-        <div class="side-content bottom-content">
-            <p class="side-text">Evaluar los riesgos y sus impactos</p>
-            <img src="../assets/images/apuntes.png" alt="Apuntes" class="side-image">
+                <div class="accordion-item">
+                    <button class="accordion-button">
+                        <span class="button-text">Se realiza al inicio de toda tarea.</span>
+                        <span class="plus-icon">+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <p>Información sobre cuándo y cómo realizar la tarea...</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-button">
+                        <span class="button-text">Las medidas de control serán ratificadas o modificadas por la supervisión responsable</span>
+                        <span class="plus-icon">+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <p>Detalles sobre el proceso de control y supervisión...</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+    <script src="../assets/js/pag15.js"></script>
 </body>
 </html> 
